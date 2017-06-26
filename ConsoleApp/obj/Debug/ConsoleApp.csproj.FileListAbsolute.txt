@@ -1,0 +1,12 @@
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\ConsoleApp\bin\Debug\ConsoleApp.exe.config
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\ConsoleApp\bin\Debug\ConsoleApp.exe
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\ConsoleApp\bin\Debug\ConsoleApp.pdb
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\ConsoleApp\bin\Debug\DataLayer.dll
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\ConsoleApp\bin\Debug\EntityFramework.dll
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\ConsoleApp\bin\Debug\Model.dll
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\ConsoleApp\bin\Debug\DataLayer.pdb
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\ConsoleApp\bin\Debug\Model.pdb
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\ConsoleApp\bin\Debug\EntityFramework.xml
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\ConsoleApp\obj\Debug\ConsoleApp.csprojResolveAssemblyReference.cache
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\ConsoleApp\obj\Debug\ConsoleApp.exe
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\ConsoleApp\obj\Debug\ConsoleApp.pdb
