@@ -5,6 +5,11 @@ namespace DataLayer
 {
 	public class ModelContext : DbContext
 	{
+		public ModelContext()
+			: base("PasionHockey")
+		{
+		}
+
 		public DbSet<Division> Divisions { get; set; }
 		public DbSet<SubDivision> SubDivisions { get; set; }
 		public DbSet<Category> Categorys { get; set; }
