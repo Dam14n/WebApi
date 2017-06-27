@@ -6,7 +6,7 @@ namespace DataLayer
 	public class ModelContext : DbContext
 	{
 		public ModelContext()
-			: base("PasionHockey")
+			: base("name=PasionHockey")
 		{
 		}
 
