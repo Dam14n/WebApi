@@ -1,0 +1,4 @@
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bin\Debug\WebService.dll
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bin\Debug\WebService.pdb
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\obj\Debug\WebService.dll
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\obj\Debug\WebService.pdb

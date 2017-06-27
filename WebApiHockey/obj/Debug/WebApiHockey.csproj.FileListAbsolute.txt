@@ -72,3 +72,7 @@ C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\obj\Debug\WebApiHockey.csprojResolveAssemblyReference.cache
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\obj\Debug\WebApiHockey.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\obj\Debug\WebApiHockey.pdb
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\DTO.dll
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\AutoMapper.dll
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\DTO.pdb
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\AutoMapper.xml

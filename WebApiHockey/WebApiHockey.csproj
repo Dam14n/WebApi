@@ -296,6 +296,10 @@
       <Project>{cac8c3fc-92fd-41f2-b0bc-13951b5b9aff}</Project>
       <Name>DataLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{dbb1ea85-ed1c-4c27-94d0-748e55fedced}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{b086587b-9f2f-43cf-b294-a0aa45522d57}</Project>
       <Name>Model</Name>

@@ -12,9 +12,8 @@ namespace DTO.Mapper
 		private static void ConfigureDivision()
 		{
 			AutoMapper.Mapper.CreateMap<Division, DivisionDTO>()
-			.ForMember(dest => dest.SubDivisions,
-					   opts => opts.MapFrom(src => src.SubDivisions))
-			.ReverseMap();
+				.ForMember(div => div.SubDivisions, divDto => divDto.Ignore())
+				.ReverseMap();
 		}
 	}
 }
