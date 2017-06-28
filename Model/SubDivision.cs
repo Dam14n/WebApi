@@ -5,7 +5,7 @@ namespace Model
 	/// <summary>
 	/// SubDivision model class.
 	/// </summary>
-	public class SubDivision
+	public class SubDivision : IIdentificable
 	{
 		/// <summary>
 		/// Initializes a new instance of the <see cref="SubDivision"/> class.
@@ -34,6 +34,12 @@ namespace Model
 		{
 			get { return this.categories ?? (this.categories = new List<Category>()); }
 			protected set { this.categories = value; }
+		}
+
+		public virtual int Id
+		{
+			get;
+			set;
 		}
 	}
 }

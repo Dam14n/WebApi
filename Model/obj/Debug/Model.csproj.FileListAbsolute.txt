@@ -1,6 +1,5 @@
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\Model\bin\Debug\Model.dll.config
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\Model\bin\Debug\Model.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\Model\bin\Debug\Model.pdb
-C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\Model\obj\Debug\Model.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\Model\obj\Debug\Model.pdb

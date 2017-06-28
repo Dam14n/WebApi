@@ -2,7 +2,7 @@ namespace Model
 {
 	using System.Collections.Generic;
 
-	public class Division
+	public class Division : IIdentificable
 	{
 		public Division()
 		{
@@ -17,6 +17,12 @@ namespace Model
 		{
 			get { return this.subDivisions ?? (this.subDivisions = new List<SubDivision>()); }
 			protected set { this.subDivisions = value; }
+		}
+
+		public virtual int Id
+		{
+			get;
+			set;
 		}
 	}
 }

@@ -1,6 +1,9 @@
-﻿namespace DTO
+﻿using Model;
+
+namespace DTO
 {
-	public class SubDivisionDTO
+	public class SubDivisionDTO : IIdentificable
 	{
+		public int Id { get; set; }
 	}
 }

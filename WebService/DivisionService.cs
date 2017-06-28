@@ -12,7 +12,10 @@ namespace WebService
 
 		public List<DivisionDTO> GetAll()
 		{
-			return _context.Divisions.ProjectTo<DivisionDTO>().ToList();
+			var asd = _context.Divisions;
+			var a = asd.ProjectTo<DivisionDTO>();
+			List<DivisionDTO> x = a.ToList();
+			return x;
 		}
 
 		public DivisionDTO GetDivision(int id)
