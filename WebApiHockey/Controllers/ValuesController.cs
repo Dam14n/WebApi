@@ -1,26 +1,24 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Web.Http;
-using DataLayer;
 using Model;
+using WebService;
 
 namespace WebApiHockey.Controllers
 {
 	public class ValuesController : ApiController
 	{
-		private readonly ModelContext _context = new ModelContext();
+		private DivisionService DivisionService = new DivisionService();
 
 		// GET api/values
 		public List<Division> Get()
 		{
-			return _context.Divisions.ToList();
-			//return new string[] { "value1", "value2" };
+			return DivisionService.GetAll();
 		}
 
 		// GET api/values/5
-		public string Get(int id)
+		public Division Get(int id)
 		{
-			return "value";
+			return DivisionService.GetDivision(id);
 		}
 
 		// POST api/values

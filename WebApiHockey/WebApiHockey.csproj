@@ -304,6 +304,10 @@
       <Project>{b086587b-9f2f-43cf-b294-a0aa45522d57}</Project>
       <Name>Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WebService\WebService.csproj">
+      <Project>{77c25f28-dc9b-434b-92ea-a94d52279935}</Project>
+      <Name>WebService</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

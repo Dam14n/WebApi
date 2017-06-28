@@ -76,3 +76,5 @@ C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\AutoMapper.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\DTO.pdb
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\AutoMapper.xml
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\WebService.dll
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\WebService.pdb

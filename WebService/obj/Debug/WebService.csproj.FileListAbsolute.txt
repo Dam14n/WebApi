@@ -2,3 +2,11 @@ C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bi
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bin\Debug\WebService.pdb
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\obj\Debug\WebService.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\obj\Debug\WebService.pdb
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bin\Debug\WebService.dll.config
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bin\Debug\DataLayer.dll
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bin\Debug\EntityFramework.dll
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bin\Debug\Model.dll
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bin\Debug\DataLayer.pdb
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bin\Debug\Model.pdb
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bin\Debug\EntityFramework.xml
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\obj\Debug\WebService.csprojResolveAssemblyReference.cache
