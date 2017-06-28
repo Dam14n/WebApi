@@ -12,7 +12,7 @@ namespace DTO.Mapper
 		private static void ConfigureDivision()
 		{
 			AutoMapper.Mapper.CreateMap<Division, DivisionDTO>()
-				.ForMember(div => div.SubDivisions, divDto => divDto.Ignore())
+				//.ForMember(div => div.SubDivisions, divDto => divDto.Ignore())
 				.ReverseMap();
 		}
 	}

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http;
-using Model;
+using DTO;
 using WebService;
 
 namespace WebApiHockey.Controllers
@@ -10,13 +10,13 @@ namespace WebApiHockey.Controllers
 		private DivisionService DivisionService = new DivisionService();
 
 		// GET api/values
-		public List<Division> Get()
+		public List<DivisionDTO> Get()
 		{
 			return DivisionService.GetAll();
 		}
 
 		// GET api/values/5
-		public Division Get(int id)
+		public DivisionDTO Get(int id)
 		{
 			return DivisionService.GetDivision(id);
 		}

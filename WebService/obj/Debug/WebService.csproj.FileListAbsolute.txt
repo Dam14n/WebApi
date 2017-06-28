@@ -10,3 +10,7 @@ C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bi
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bin\Debug\Model.pdb
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bin\Debug\EntityFramework.xml
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\obj\Debug\WebService.csprojResolveAssemblyReference.cache
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bin\Debug\AutoMapper.dll
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bin\Debug\DTO.dll
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bin\Debug\DTO.pdb
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebService\bin\Debug\AutoMapper.xml

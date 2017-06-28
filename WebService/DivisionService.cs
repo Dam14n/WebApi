@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using AutoMapper.QueryableExtensions;
 using DataLayer;
-using Model;
+using DTO;
 
 namespace WebService
 {
@@ -9,14 +10,14 @@ namespace WebService
 	{
 		private readonly ModelContext _context = new ModelContext();
 
-		public List<Division> GetAll()
+		public List<DivisionDTO> GetAll()
 		{
-			return _context.Divisions.ToList();
+			return _context.Divisions.ProjectTo<DivisionDTO>().ToList();
 		}
 
-		public Division GetDivision(int id)
+		public DivisionDTO GetDivision(int id)
 		{
-			return _context.Divisions.Find(id);
+			return _context.Divisions.ProjectTo<DivisionDTO>().FirstOrDefault(div => div.DivisionId == id);
 		}
 	}
 }
