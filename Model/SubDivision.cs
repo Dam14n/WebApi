@@ -14,8 +14,6 @@ namespace Model
 		{
 		}
 
-		public virtual int SubDivisionId { get; set; }
-
 		/// <summary>
 		/// Gets or sets the SubDivision name.
 		/// </summary>

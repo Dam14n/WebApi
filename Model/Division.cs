@@ -8,7 +8,6 @@ namespace Model
 		{
 		}
 
-		public int DivisionId { get; set; }
 		public virtual string Name { get; set; }
 
 		private ICollection<SubDivision> subDivisions;
@@ -19,10 +18,6 @@ namespace Model
 			protected set { this.subDivisions = value; }
 		}
 
-		public virtual int Id
-		{
-			get;
-			set;
-		}
+		public virtual int Id { get; set; }
 	}
 }

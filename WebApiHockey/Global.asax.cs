@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using DTO.Mapper;
+using DTO.Mappings;
 
 namespace WebApiHockey
 {
@@ -20,7 +20,7 @@ namespace WebApiHockey
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-			MapperConfiguration.RegisterMappings();
+			MapperInitialize.RegisterMappings();
 		}
 	}
 }
