@@ -17,5 +17,21 @@ namespace DataLayer
 		public DbSet<Match> Matchs { get; set; }
 		public DbSet<Player> Players { get; set; }
 		public DbSet<Team> Teams { get; set; }
+
+		protected override void OnModelCreating(DbModelBuilder modelBuilder)
+		{
+			modelBuilder.Entity<Match>()
+			   .HasRequired(c => c.LocalTeam)
+			   .WithMany(p => p.Matches)
+			   .HasForeignKey(c => c.LocalTeamId)
+			   .WillCascadeOnDelete(false);
+			// Otherwise you might get a "cascade causes cycles" error
+
+			modelBuilder.Entity<Match>()
+			   .HasRequired(c => c.EnemyTeam)
+			   .WithMany() // No reverse navigation property
+			   .HasForeignKey(c => c.EnemyTeamId)
+			   .WillCascadeOnDelete(false);
+		}
 	}
 }
