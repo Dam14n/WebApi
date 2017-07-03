@@ -10,9 +10,6 @@ namespace DTO
 		public int Id { get; set; }
 
 		[DataMember]
-		public int SubDivisionId { get; set; }
-
-		[DataMember]
 		public string Name { get; set; }
 
 		[DataMember]

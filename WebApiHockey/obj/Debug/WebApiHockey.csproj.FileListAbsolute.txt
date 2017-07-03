@@ -1,3 +1,4 @@
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\obj\Debug\WebApiHockey.csprojResolveAssemblyReference.cache
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\WebApiHockey.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\WebApiHockey.pdb
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\Antlr3.Runtime.dll
@@ -26,7 +27,6 @@ C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\System.Web.WebPages.Razor.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\WebGrease.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\WebService.dll
-C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\AutoMapper.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\DataLayer.pdb
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\DTO.pdb
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\Model.pdb
@@ -47,7 +47,6 @@ C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\Microsoft.Data.Edm.xml
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\Microsoft.Data.OData.xml
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\System.Spatial.xml
-C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\AutoMapper.xml
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\de\Microsoft.Data.Edm.resources.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\es\Microsoft.Data.Edm.resources.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\fr\Microsoft.Data.Edm.resources.dll
@@ -75,6 +74,5 @@ C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\ru\System.Spatial.resources.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\obj\Debug\WebApiHockey.csprojResolveAssemblyReference.cache
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\obj\Debug\WebApiHockey.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\obj\Debug\WebApiHockey.pdb

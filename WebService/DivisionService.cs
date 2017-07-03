@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using AutoMapper.QueryableExtensions;
 using DataLayer;
 using DTO;
 using Model;
@@ -9,30 +8,34 @@ namespace WebService
 {
 	public class DivisionService
 	{
-		private readonly ModelContext _context = new ModelContext();
-
-		public List<Division> GetAll()
+		public List<DivisionDTO> GetAll()
 		{
-			return _context.Divisions
-				//.ProjectTo<DivisionDTO>()
-				.ToList();
-			//this.QueryWhere(AutoMapper.Mapper., null, null, true);
-			/*var entityModels = (IQueryable<Division>)_context.Divisions;
+			using (var db = new ModelContext())
+			{
+				List<Division> divisions = db.Divisions.ToList();
+				List<DivisionDTO> dtos = new List<DivisionDTO>();
 
-			var entityModelsEnumerable = (IEnumerable<Division>)entityModels;
-
-			var entityDtos = entityModelsEnumerable.ToList();
-			return entityDtos;*/
-
-			/*	var asd = _context.Divisions;
-				var a = asd.ProjectTo<DivisionDTO>();
-				List<DivisionDTO> x = a.ToList();
-				return x;*/
+				foreach (var division in divisions)
+				{
+					DivisionDTO dto = new DivisionDTO();
+					dto.Id = division.Id;
+					dto.Name = division.Name;
+					dto.SubDivisions = division.SubDivisions
+						.Select(m => m.Id)
+						.ToList();
+					dtos.Add(dto);
+				}
+				return dtos;
+			}
 		}
 
 		public DivisionDTO GetDivision(int id)
 		{
-			return _context.Divisions.ProjectTo<DivisionDTO>().FirstOrDefault(div => div.Id == id);
+			using (var db = new ModelContext())
+			{
+				List<DivisionDTO> divisions = this.GetAll().Where(div => div.Id == id).ToList();
+				return divisions.FirstOrDefault();
+			}
 		}
 	}
 }

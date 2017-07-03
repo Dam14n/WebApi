@@ -11,8 +11,9 @@ namespace DTO
 		public string Name { get; set; }
 
 		[DataMember]
-		public ICollection<SubDivisionDTO> SubDivisions { get; set; }
+		public List<int> SubDivisions { get; set; }
 
+		[DataMember]
 		public int Id { get; set; }
 	}
 }
