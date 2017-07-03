@@ -2,6 +2,6 @@
 {
 	public interface IIdentificable
 	{
-		int Id { get; }
+		int Id { get; private set; }
 	}
 }

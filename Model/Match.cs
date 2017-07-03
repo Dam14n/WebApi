@@ -2,19 +2,13 @@ using System.Collections.Generic;
 
 namespace Model
 {
-	/// <summary>
-	/// Division model class.
-	/// </summary>
-	public class Match
+	public class Match : IIdentificable
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="Division"/> class.
-		/// </summary>
 		public Match()
 		{
 		}
 
-		public virtual int MatchId { get; set; }
+		public int Id { get; set; }
 
 		public virtual int CategoryId { get; set; }
 		public virtual Category Category { get; set; }

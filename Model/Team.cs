@@ -3,38 +3,16 @@ namespace Model
 	using System;
 	using System.Collections.Generic;
 
-	/// <summary>
-	/// Team model class.
-	/// </summary>
-	public class Team
+	public class Team : IIdentificable
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="Team"/> class.
-		/// </summary>
 		public Team()
 		{
 		}
 
-		public virtual int TeamId { get; set; }
-
-		public virtual String Name
-		{
-			get;
-			set;
-		}
-
-		public virtual String Location
-		{
-			get;
-			set;
-		}
-
-		public virtual int Logo
-		{
-			get;
-			set;
-		}
-
+		public int Id { get; set; }
+		public virtual String Name { get; set; }
+		public virtual String Location { get; set; }
+		public virtual int Logo { get; set; }
 		private IList<Player> players;
 
 		public virtual IList<Player> Players
