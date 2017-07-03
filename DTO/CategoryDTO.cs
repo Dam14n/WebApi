@@ -14,9 +14,6 @@ namespace DTO
 		public string Name { get; set; }
 
 		[DataMember]
-		public bool Favorite { get; set; }
-
-		[DataMember]
 		public int SubDivisionId { get; set; }
 
 		[DataMember]

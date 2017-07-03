@@ -49,6 +49,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryDTO.cs" />
+    <Compile Include="TeamDTO.cs" />
+    <Compile Include="PlayerDTO.cs" />
+    <Compile Include="MatchDTO.cs" />
+    <Compile Include="GoalDTO.cs" />
     <Compile Include="DivisionDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubDivisionDTO.cs" />
