@@ -20,7 +20,7 @@ namespace WebService
 					DivisionDTO dto = new DivisionDTO();
 					dto.Id = division.Id;
 					dto.Name = division.Name;
-					dto.SubDivisions = division.SubDivisions
+					dto.SubDivisionsIds = division.SubDivisions
 						.Select(m => m.Id)
 						.ToList();
 					dtos.Add(dto);
@@ -31,11 +31,8 @@ namespace WebService
 
 		public DivisionDTO GetDivision(int id)
 		{
-			using (var db = new ModelContext())
-			{
-				List<DivisionDTO> divisions = this.GetAll().Where(div => div.Id == id).ToList();
-				return divisions.FirstOrDefault();
-			}
+			List<DivisionDTO> divisions = this.GetAll().Where(div => div.Id == id).ToList();
+			return divisions.FirstOrDefault();
 		}
 	}
 }
