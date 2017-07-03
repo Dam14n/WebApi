@@ -5,13 +5,19 @@ using Model;
 namespace DTO
 {
 	[DataContract]
-	public class DivisionDTO : IIdentificable
+	public class PlayerDTO : IIdentificable
 	{
 		[DataMember]
 		public string Name { get; set; }
 
 		[DataMember]
-		public List<int> SubDivisionsIds { get; set; }
+		public int Age { get; set; }
+
+		[DataMember]
+		public int TeamId { get; set; }
+
+		[DataMember]
+		public List<int> GoalsIds { get; set; }
 
 		[DataMember]
 		public int Id { get; set; }

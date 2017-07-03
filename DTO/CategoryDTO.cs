@@ -5,7 +5,7 @@ using Model;
 namespace DTO
 {
 	[DataContract]
-	public class SubDivisionDTO : IIdentificable
+	public class CategoryDTO : IIdentificable
 	{
 		[DataMember]
 		public int Id { get; set; }
@@ -14,9 +14,12 @@ namespace DTO
 		public string Name { get; set; }
 
 		[DataMember]
-		public int DivisionId { get; set; }
+		public bool Favorite { get; set; }
 
 		[DataMember]
-		public List<int> CategoriesIds { get; set; }
+		public int SubDivisionId { get; set; }
+
+		[DataMember]
+		public List<int> MatchesIds { get; set; }
 	}
 }
