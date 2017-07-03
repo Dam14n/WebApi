@@ -1,6 +1,5 @@
 namespace Model
 {
-	using System;
 	using System.Collections.Generic;
 
 	public class Player : IIdentificable
@@ -9,8 +8,8 @@ namespace Model
 		{
 		}
 
-		public int Id { get; set; }
-		public virtual String Name { get; set; }
+		public virtual int Id { get; set; }
+		public virtual string Name { get; set; }
 		public virtual int Age { get; set; }
 		public virtual int TeamId { get; set; }
 		public virtual Team Team { get; set; }

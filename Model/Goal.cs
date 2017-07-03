@@ -7,7 +7,6 @@ namespace Model
 		}
 
 		public virtual int Id { get; private set; }
-		public virtual int GoalId { get; set; }
 		public virtual int MatchId { get; set; }
 
 		public virtual Match Match
