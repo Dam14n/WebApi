@@ -1,4 +1,3 @@
-C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\obj\Debug\WebApiHockey.csprojResolveAssemblyReference.cache
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\WebApiHockey.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\WebApiHockey.pdb
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\Antlr3.Runtime.dll
@@ -74,5 +73,6 @@ C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\ru\System.Spatial.resources.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\obj\Debug\WebApiHockey.csprojResolveAssemblyReference.cache
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\obj\Debug\WebApiHockey.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\WebApiHockey\obj\Debug\WebApiHockey.pdb

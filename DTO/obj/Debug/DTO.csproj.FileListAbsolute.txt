@@ -1,4 +1,3 @@
-C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\DTO\bin\Debug\DTO.dll.config
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\DTO\bin\Debug\DTO.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\DTO\bin\Debug\DTO.pdb
@@ -8,5 +7,6 @@ C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\DTO\bin\Debug
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\DTO\bin\Debug\DataLayer.pdb
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\DTO\bin\Debug\Model.pdb
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\DTO\bin\Debug\EntityFramework.xml
+C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\DTO\obj\Debug\DTO.dll
 C:\Users\DJORDA\Documents\Visual Studio 2012\Projects\WebApiHockey\DTO\obj\Debug\DTO.pdb
