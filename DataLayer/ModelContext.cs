@@ -17,6 +17,7 @@ namespace DataLayer
 		public DbSet<Match> Matchs { get; set; }
 		public DbSet<Player> Players { get; set; }
 		public DbSet<Team> Teams { get; set; }
+		public DbSet<User> Users { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
