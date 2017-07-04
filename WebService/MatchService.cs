@@ -20,14 +20,16 @@ namespace WebService
 					MatchDTO dto = new MatchDTO();
 					dto.Id = match.Id;
 					dto.CategoryId = match.CategoryId;
-					dto.EnemyGoalsIds = match.EnemyGoals
-						.Select(m => m.Id)
-						.ToList();
-					dto.LocalGoalsIds = match.LocalGoals
-						.Select(m => m.Id)
-						.ToList();
 					dto.EnemyTeamId = match.EnemyTeamId ?? 0;
 					dto.LocalTeamId = match.LocalTeamId ?? 0;
+					dto.EnemyGoalsIds = match.EnemyTeam.Goals
+						.Where(m => m.MatchId == match.Id && m.TeamId == match.EnemyTeamId)
+						.Select(m => m.Id)
+						.ToList();
+					dto.LocalGoalsIds = match.LocalTeam.Goals
+						.Where(m => m.MatchId == match.Id && m.TeamId == match.LocalTeamId)
+						.Select(m => m.Id)
+						.ToList();
 					dtos.Add(dto);
 				}
 				return dtos;
