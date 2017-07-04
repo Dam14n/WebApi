@@ -47,6 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CategoryService.cs" />
+    <Compile Include="UserService.cs" />
+    <Compile Include="TeamService.cs" />
+    <Compile Include="PlayerService.cs" />
+    <Compile Include="MatchService.cs" />
+    <Compile Include="GoalService.cs" />
+    <Compile Include="SubDivisionService.cs" />
     <Compile Include="DivisionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
