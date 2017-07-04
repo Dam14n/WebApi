@@ -7,18 +7,26 @@ namespace WebApiHockey.Controllers
 {
 	public class CategoriesController : ApiController
 	{
-		private CategoryService CategoryService = new CategoryService();
+		private CategoryService categoryService = new CategoryService();
 
-		// GET api/values
 		public List<CategoryDTO> Get()
 		{
-			return CategoryService.GetAll();
+			return categoryService.GetAll();
 		}
 
-		// GET api/values/5
 		public CategoryDTO Get(int id)
 		{
-			return CategoryService.GetCategory(id);
+			return categoryService.GetCategory(id);
+		}
+
+		public List<CategoryDTO> GetCategoriesBySubDivision(int subDivisionId)
+		{
+			return categoryService.GetCategoriesBySubDivision(subDivisionId);
+		}
+
+		public CategoryDTO GetCategoryBySubDivision(int subDivisionId, int id)
+		{
+			return categoryService.GetCategoryBySubDivision(subDivisionId, id);
 		}
 	}
 }

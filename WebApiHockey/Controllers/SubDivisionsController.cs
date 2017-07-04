@@ -9,16 +9,24 @@ namespace WebApiHockey.Controllers
 	{
 		private SubDivisionService subDivisionService = new SubDivisionService();
 
-		// GET api/values
-		public List<SubDivisionDTO> Get()
+		public List<SubDivisionDTO> GetSubDivisions()
 		{
 			return subDivisionService.GetAll();
 		}
 
-		// GET api/values/5
-		public SubDivisionDTO Get(int id)
+		public SubDivisionDTO GetSubDivision(int id)
 		{
 			return subDivisionService.GetSubDivision(id);
+		}
+
+		public List<SubDivisionDTO> GetSubDivisionsByDivision(int divisionId)
+		{
+			return subDivisionService.GetSubDivisionsByDivision(divisionId);
+		}
+
+		public SubDivisionDTO GetSubDivisionByDivision(int divisionId, int id)
+		{
+			return subDivisionService.GetSubDivisionByDivision(divisionId, id);
 		}
 	}
 }

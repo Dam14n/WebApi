@@ -9,13 +9,11 @@ namespace WebApiHockey.Controllers
 	{
 		private DivisionService DivisionService = new DivisionService();
 
-		// GET api/values
 		public List<DivisionDTO> Get()
 		{
 			return DivisionService.GetAll();
 		}
 
-		// GET api/values/5
 		public DivisionDTO Get(int id)
 		{
 			return DivisionService.GetDivision(id);

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web.Http;
+﻿using System.Web.Http;
 
 namespace WebApiHockey
 {
@@ -13,6 +10,18 @@ namespace WebApiHockey
 				name: "DefaultApi",
 				routeTemplate: "api/{controller}/{id}",
 				defaults: new { id = RouteParameter.Optional }
+			);
+
+			config.Routes.MapHttpRoute(
+				name: "SubDivisions",
+				routeTemplate: "api/divisions/{divisionId}/subdivisions/{id}",
+				defaults: new { controller = "subdivisions", id = RouteParameter.Optional }
+			);
+
+			config.Routes.MapHttpRoute(
+				name: "Categories",
+				routeTemplate: "api/subdivisions/{subDivisionId}/categories/{id}",
+				defaults: new { controller = "categories", id = RouteParameter.Optional }
 			);
 
 			// Uncomment the following line of code to enable query support for actions with an IQueryable or IQueryable<T> return type.
