@@ -6,12 +6,12 @@ namespace Model
 	{
 		public virtual int Id { get; private set; }
 
-		private IList<Category> categories;
+		private IList<Favorite> favorites;
 
-		public virtual IList<Category> Categories
+		public virtual IList<Favorite> Favorites
 		{
-			get { return this.categories ?? (this.categories = new List<Category>()); }
-			protected set { this.categories = value; }
+			get { return this.favorites ?? (this.favorites = new List<Favorite>()); }
+			protected set { this.favorites = value; }
 		}
 	}
 }
