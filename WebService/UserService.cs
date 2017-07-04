@@ -19,7 +19,7 @@ namespace WebService
 				{
 					UserDTO dto = new UserDTO();
 					dto.Id = user.Id;
-					dto.CategoriesIds = user.Categories
+					dto.FavoritesIds = user.Favorites
 						.Select(m => m.Id)
 						.ToList();
 					dtos.Add(dto);
