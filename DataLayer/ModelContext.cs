@@ -18,6 +18,7 @@ namespace DataLayer
 		public DbSet<Player> Players { get; set; }
 		public DbSet<Team> Teams { get; set; }
 		public DbSet<User> Users { get; set; }
+		public DbSet<Favorite> Favorites { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
