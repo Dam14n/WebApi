@@ -27,5 +27,13 @@ namespace Model
 			get { return this.matches ?? (this.matches = new List<Match>()); }
 			protected set { this.matches = value; }
 		}
+
+		private IList<Goal> goals;
+
+		public virtual IList<Goal> Goals
+		{
+			get { return this.goals ?? (this.goals = new List<Goal>()); }
+			protected set { this.goals = value; }
+		}
 	}
 }

@@ -20,5 +20,13 @@ namespace Model
 			get { return this.matches ?? (this.matches = new List<Match>()); }
 			protected set { this.matches = value; }
 		}
+
+		private IList<Favorite> favorites;
+
+		public virtual IList<Favorite> Favorites
+		{
+			get { return this.favorites ?? (this.favorites = new List<Favorite>()); }
+			protected set { this.favorites = value; }
+		}
 	}
 }
