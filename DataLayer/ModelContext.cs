@@ -34,6 +34,12 @@ namespace DataLayer
 			   .WithMany() // No reverse navigation property
 			   .HasForeignKey(c => c.EnemyTeamId)
 			   .WillCascadeOnDelete(false);
+
+			modelBuilder.Entity<Goal>()
+				.HasRequired(c => c.Team)
+				.WithMany(p => p.Goals)
+				.HasForeignKey(c => c.TeamId)
+				.WillCascadeOnDelete(false);
 		}
 	}
 }
