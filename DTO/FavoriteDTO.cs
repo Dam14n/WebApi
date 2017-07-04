@@ -5,12 +5,12 @@ using Model;
 namespace DTO
 {
 	[DataContract]
-	public class UserDTO : IIdentificable
+	public class FavoriteDTO : IIdentificable
 	{
 		[DataMember]
 		public int Id { get; set; }
 
 		[DataMember]
-		public List<int> FavoritesIds { get; set; }
+		public List<int> CategoriesIds { get; set; }
 	}
 }
