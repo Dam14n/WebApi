@@ -424,3 +424,25 @@ __pycache__/
 # BizTalk build output
 
 # End of https://www.gitignore.io/api/csharp,visualstudio
+*.dll
+*.pdb
+/DataLayer/bin/Debug/*.dll
+/DataLayer/bin/Debug/*.pdb
+/DataLayer/obj/Debug/*.cache
+/DataLayer/obj/Debug/*.dll
+/DataLayer/obj/Debug/*.pdb
+/DTO/bin/Debug/*.dll
+/DTO/bin/Debug/*.pdb
+/*.suo
+/WebApiHockey/bin/*.dll
+/WebApiHockey/bin/*.pdb
+/DataLayer/obj/Debug/*.cache
+/DTO/obj/Debug/*.cache
+/WebApiHockey/obj/Debug/*.cache
+/DTO/obj/Debug/DTO.dll
+/WebApiHockey/obj/Debug/WebApiHockey.dll
+/WebService/bin/Debug/WebService.dll
+/WebService/obj/Debug/WebService.dll
+/WebApiHockey/obj/Debug/WebApiHockey.pdb
+/WebService/bin/Debug/WebService.pdb
+/WebService/obj/Debug/WebService.pdb
