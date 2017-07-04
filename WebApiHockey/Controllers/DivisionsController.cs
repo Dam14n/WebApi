@@ -5,7 +5,7 @@ using WebService;
 
 namespace WebApiHockey.Controllers
 {
-	public class DivisionController : ApiController
+	public class DivisionsController : ApiController
 	{
 		private DivisionService DivisionService = new DivisionService();
 
