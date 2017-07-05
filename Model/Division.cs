@@ -2,32 +2,18 @@ namespace Model
 {
 	using System.Collections.Generic;
 
-	/// <summary>
-	/// Division model class.
-	/// </summary>
-	public class Division
+	public class Division : IIdentificable
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="Division"/> class.
-		/// </summary>
 		public Division()
 		{
 		}
 
-		public int DivisionId { get; set; }
+		public virtual int Id { get; private set; }
+		public virtual string Name { get; set; }
 
-		/// <summary>
-		/// Gets or sets the Division name.
-		/// </summary>
-		public virtual string Name
-		{
-			get;
-			set;
-		}
+		private IList<SubDivision> subDivisions;
 
-		private ICollection<SubDivision> subDivisions;
-
-		public virtual ICollection<SubDivision> SubDivisions
+		public virtual IList<SubDivision> SubDivisions
 		{
 			get { return this.subDivisions ?? (this.subDivisions = new List<SubDivision>()); }
 			protected set { this.subDivisions = value; }

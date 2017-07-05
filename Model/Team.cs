@@ -1,40 +1,17 @@
 namespace Model
 {
-	using System;
 	using System.Collections.Generic;
 
-	/// <summary>
-	/// Team model class.
-	/// </summary>
-	public class Team
+	public class Team : IIdentificable
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="Team"/> class.
-		/// </summary>
 		public Team()
 		{
 		}
 
-		public virtual int TeamId { get; set; }
-
-		public virtual String Name
-		{
-			get;
-			set;
-		}
-
-		public virtual String Location
-		{
-			get;
-			set;
-		}
-
-		public virtual int Logo
-		{
-			get;
-			set;
-		}
-
+		public virtual int Id { get; private set; }
+		public virtual string Name { get; set; }
+		public virtual string Location { get; set; }
+		public virtual int Logo { get; set; }
 		private IList<Player> players;
 
 		public virtual IList<Player> Players
@@ -43,12 +20,28 @@ namespace Model
 			protected set { this.players = value; }
 		}
 
-		private IList<Match> matches;
+		private IList<Match> localMatches;
 
-		public virtual IList<Match> Matches
+		public virtual IList<Match> LocalMatches
 		{
-			get { return this.matches ?? (this.matches = new List<Match>()); }
-			protected set { this.matches = value; }
+			get { return this.localMatches ?? (this.localMatches = new List<Match>()); }
+			protected set { this.localMatches = value; }
+		}
+
+		private IList<Match> awayMatches;
+
+		public virtual IList<Match> AwayMatches
+		{
+			get { return this.awayMatches ?? (this.awayMatches = new List<Match>()); }
+			protected set { this.awayMatches = value; }
+		}
+
+		private IList<Goal> goals;
+
+		public virtual IList<Goal> Goals
+		{
+			get { return this.goals ?? (this.goals = new List<Goal>()); }
+			protected set { this.goals = value; }
 		}
 	}
 }

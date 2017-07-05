@@ -2,44 +2,31 @@ namespace Model
 {
 	using System.Collections.Generic;
 
-	/// <summary>
-	/// Category model class.
-	/// </summary>
-	public class Category
+	public class Category : IIdentificable
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="Category"/> class.
-		/// </summary>
 		public Category()
 		{
 		}
 
-		public virtual int CategoryId { get; set; }
-
-		/// <summary>
-		/// Gets or sets the Category name.
-		/// </summary>
-		public virtual string Name
-		{
-			get;
-			set;
-		}
-
-		public virtual bool Favorite
-		{
-			get;
-			set;
-		}
-
+		public virtual int Id { get; private set; }
+		public virtual string Name { get; set; }
 		public virtual int SubDivisionId { get; set; }
 		public virtual SubDivision SubDivision { get; set; }
 
-		private IList<Match> matches;
+		private IList<Date> dates;
 
-		public virtual IList<Match> Matches
+		public virtual IList<Date> Dates
 		{
-			get { return this.matches ?? (this.matches = new List<Match>()); }
-			protected set { this.matches = value; }
+			get { return this.dates ?? (this.dates = new List<Date>()); }
+			protected set { this.dates = value; }
+		}
+
+		private IList<Favorite> favorites;
+
+		public virtual IList<Favorite> Favorites
+		{
+			get { return this.favorites ?? (this.favorites = new List<Favorite>()); }
+			protected set { this.favorites = value; }
 		}
 	}
 }

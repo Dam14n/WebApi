@@ -5,25 +5,14 @@ namespace Model
 	/// <summary>
 	/// SubDivision model class.
 	/// </summary>
-	public class SubDivision
+	public class SubDivision : IIdentificable
 	{
-		/// <summary>
-		/// Initializes a new instance of the <see cref="SubDivision"/> class.
-		/// </summary>
 		public SubDivision()
 		{
 		}
 
-		public virtual int SubDivisionId { get; set; }
-
-		/// <summary>
-		/// Gets or sets the SubDivision name.
-		/// </summary>
-		public virtual string Name
-		{
-			get;
-			set;
-		}
+		public virtual int Id { get; private set; }
+		public virtual string Name { get; set; }
 
 		public virtual int DivisionId { get; set; }
 		public virtual Division Division { get; set; }
