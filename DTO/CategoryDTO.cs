@@ -17,6 +17,6 @@ namespace DTO
 		public int SubDivisionId { get; set; }
 
 		[DataMember]
-		public List<int> MatchesIds { get; set; }
+		public List<int> DatesIds { get; set; }
 	}
 }

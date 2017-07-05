@@ -8,7 +8,7 @@ namespace DTO
 	public class MatchDTO : IIdentificable
 	{
 		[DataMember]
-		public int CategoryId { get; set; }
+		public int DateId { get; set; }
 
 		[DataMember]
 		public int LocalTeamId { get; set; }
