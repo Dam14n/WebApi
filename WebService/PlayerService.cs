@@ -36,5 +36,51 @@ namespace WebService
 			List<PlayerDTO> players = this.GetAll().Where(m => m.Id == id).ToList();
 			return players.FirstOrDefault();
 		}
+
+		public List<PlayerDTO> GetPlayersByTeam(int teamId)
+		{
+			using (var db = new ModelContext())
+			{
+				List<Player> players = db.Players.Where(m => m.TeamId == teamId).ToList();
+				List<PlayerDTO> dtos = new List<PlayerDTO>();
+
+				foreach (var player in players)
+				{
+					PlayerDTO dto = new PlayerDTO();
+					dto.Id = player.Id;
+					dto.Age = player.Age;
+					dto.GoalsIds = player.Goals
+						.Select(m => m.Id)
+						.ToList();
+					dto.Name = player.Name;
+					dto.TeamId = player.TeamId;
+					dtos.Add(dto);
+				}
+				return dtos;
+			}
+		}
+
+		public PlayerDTO GetPlayerByTeam(int teamId, int id)
+		{
+			using (var db = new ModelContext())
+			{
+				List<Player> players = db.Players.Where(m => m.TeamId == teamId && m.Id == id).ToList();
+				List<PlayerDTO> dtos = new List<PlayerDTO>();
+
+				foreach (var player in players)
+				{
+					PlayerDTO dto = new PlayerDTO();
+					dto.Id = player.Id;
+					dto.Age = player.Age;
+					dto.GoalsIds = player.Goals
+						.Select(m => m.Id)
+						.ToList();
+					dto.Name = player.Name;
+					dto.TeamId = player.TeamId;
+					dtos.Add(dto);
+				}
+				return dtos.FirstOrDefault();
+			}
+		}
 	}
 }
