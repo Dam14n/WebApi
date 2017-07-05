@@ -5,17 +5,18 @@ using WebService;
 
 namespace WebApiHockey.Controllers
 {
+	[RoutePrefix("api/players")]
 	public class PlayersController : ApiController
 	{
 		private PlayerService PlayerService = new PlayerService();
 
-		// GET api/values
+		[Route("")]
 		public List<PlayerDTO> Get()
 		{
 			return PlayerService.GetAll();
 		}
 
-		// GET api/values/5
+		[Route("{id:int}")]
 		public PlayerDTO Get(int id)
 		{
 			return PlayerService.GetPlayer(id);

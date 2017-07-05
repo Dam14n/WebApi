@@ -5,17 +5,18 @@ using WebService;
 
 namespace WebApiHockey.Controllers
 {
+	[RoutePrefix("api/users")]
 	public class UsersController : ApiController
 	{
 		private UserService userService = new UserService();
 
-		// GET api/values
+		[Route("")]
 		public List<UserDTO> Get()
 		{
 			return userService.GetAll();
 		}
 
-		// GET api/values/5
+		[Route("{id:int}")]
 		public UserDTO Get(int id)
 		{
 			return userService.GetUser(id);

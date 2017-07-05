@@ -5,17 +5,18 @@ using WebService;
 
 namespace WebApiHockey.Controllers
 {
+	[RoutePrefix("api/matches")]
 	public class MatchesController : ApiController
 	{
 		private MatchService MatchService = new MatchService();
 
-		// GET api/values
+		[Route("")]
 		public List<MatchDTO> Get()
 		{
 			return MatchService.GetAll();
 		}
 
-		// GET api/values/5
+		[Route("{id:int}")]
 		public MatchDTO Get(int id)
 		{
 			return MatchService.GetMatch(id);
