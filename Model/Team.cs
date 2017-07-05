@@ -20,12 +20,20 @@ namespace Model
 			protected set { this.players = value; }
 		}
 
-		private IList<Match> matches;
+		private IList<Match> localMatches;
 
-		public virtual IList<Match> Matches
+		public virtual IList<Match> LocalMatches
 		{
-			get { return this.matches ?? (this.matches = new List<Match>()); }
-			protected set { this.matches = value; }
+			get { return this.localMatches ?? (this.localMatches = new List<Match>()); }
+			protected set { this.localMatches = value; }
+		}
+
+		private IList<Match> awayMatches;
+
+		public virtual IList<Match> AwayMatches
+		{
+			get { return this.awayMatches ?? (this.awayMatches = new List<Match>()); }
+			protected set { this.awayMatches = value; }
 		}
 
 		private IList<Goal> goals;

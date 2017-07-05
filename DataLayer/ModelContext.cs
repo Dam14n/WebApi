@@ -24,15 +24,15 @@ namespace DataLayer
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{
 			modelBuilder.Entity<Match>()
-			   .HasRequired(c => c.LocalTeam)
-			   .WithMany(p => p.Matches)
+			   .HasRequired<Team>(c => c.LocalTeam)
+			   .WithMany(p => p.LocalMatches)
 			   .HasForeignKey(c => c.LocalTeamId)
 			   .WillCascadeOnDelete(false);
 			// Otherwise you might get a "cascade causes cycles" error
 
 			modelBuilder.Entity<Match>()
-			   .HasRequired(c => c.EnemyTeam)
-			   .WithMany() // No reverse navigation property
+			   .HasRequired<Team>(c => c.EnemyTeam)
+			   .WithMany(p => p.AwayMatches) // No reverse navigation property
 			   .HasForeignKey(c => c.EnemyTeamId)
 			   .WillCascadeOnDelete(false);
 
