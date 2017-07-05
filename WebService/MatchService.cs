@@ -19,7 +19,7 @@ namespace WebService
 				{
 					MatchDTO dto = new MatchDTO();
 					dto.Id = match.Id;
-					dto.CategoryId = match.CategoryId;
+					dto.DateId = match.DateId;
 					dto.EnemyTeamId = match.EnemyTeamId ?? 0;
 					dto.LocalTeamId = match.LocalTeamId ?? 0;
 					dto.EnemyGoalsIds = match.EnemyTeam.Goals

@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryService.cs" />
+    <Compile Include="DateService.cs" />
     <Compile Include="FavoriteService.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="TeamService.cs" />

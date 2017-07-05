@@ -21,7 +21,7 @@ namespace WebService
 					dto.Id = category.Id;
 					dto.Name = category.Name;
 					dto.SubDivisionId = category.SubDivisionId;
-					dto.MatchesIds = category.Matches
+					dto.DatesIds = category.Dates
 						.Select(m => m.Id)
 						.ToList();
 					dtos.Add(dto);
@@ -49,7 +49,7 @@ namespace WebService
 					dto.Id = category.Id;
 					dto.Name = category.Name;
 					dto.SubDivisionId = category.SubDivisionId;
-					dto.MatchesIds = category.Matches
+					dto.DatesIds = category.Dates
 						.Select(m => m.Id)
 						.ToList();
 					dtos.Add(dto);
@@ -71,7 +71,7 @@ namespace WebService
 					dto.Id = category.Id;
 					dto.Name = category.Name;
 					dto.SubDivisionId = category.SubDivisionId;
-					dto.MatchesIds = category.Matches
+					dto.DatesIds = category.Dates
 						.Select(m => m.Id)
 						.ToList();
 					dtos.Add(dto);
