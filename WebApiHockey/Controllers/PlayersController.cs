@@ -8,18 +8,30 @@ namespace WebApiHockey.Controllers
 	[RoutePrefix("api/players")]
 	public class PlayersController : ApiController
 	{
-		private PlayerService PlayerService = new PlayerService();
+		private PlayerService playerService = new PlayerService();
 
 		[Route("")]
 		public List<PlayerDTO> Get()
 		{
-			return PlayerService.GetAll();
+			return playerService.GetAll();
 		}
 
 		[Route("{id:int}")]
 		public PlayerDTO Get(int id)
 		{
-			return PlayerService.GetPlayer(id);
+			return playerService.GetPlayer(id);
+		}
+
+		[Route("~/api/teams/{teamId:int}/players")]
+		public List<PlayerDTO> GetPlayersByTeam(int teamId)
+		{
+			return playerService.GetPlayersByTeam(teamId);
+		}
+
+		[Route("~/api/teams/{teamId:int}/players/{id:int}")]
+		public PlayerDTO GetPlayerByTeam(int teamId, int id)
+		{
+			return playerService.GetPlayerByTeam(teamId, id);
 		}
 	}
 }
