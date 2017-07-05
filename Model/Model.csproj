@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs" />
+    <Compile Include="Date.cs" />
     <Compile Include="Division.cs" />
     <Compile Include="Favorite.cs" />
     <Compile Include="Goal.cs" />

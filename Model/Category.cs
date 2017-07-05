@@ -13,12 +13,12 @@ namespace Model
 		public virtual int SubDivisionId { get; set; }
 		public virtual SubDivision SubDivision { get; set; }
 
-		private IList<Match> matches;
+		private IList<Date> dates;
 
-		public virtual IList<Match> Matches
+		public virtual IList<Date> Dates
 		{
-			get { return this.matches ?? (this.matches = new List<Match>()); }
-			protected set { this.matches = value; }
+			get { return this.dates ?? (this.dates = new List<Date>()); }
+			protected set { this.dates = value; }
 		}
 
 		private IList<Favorite> favorites;
