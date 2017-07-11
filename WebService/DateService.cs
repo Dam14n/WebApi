@@ -19,6 +19,7 @@ namespace WebService
 				{
 					DateDTO dto = new DateDTO();
 					dto.Id = date.Id;
+					dto.DateNumber = date.dateNumber;
 					dto.CategoryId = date.CategoryId;
 					dto.MatchesIds = date.Matches
 						.Select(m => m.Id)
@@ -46,6 +47,7 @@ namespace WebService
 				{
 					DateDTO dto = new DateDTO();
 					dto.Id = date.Id;
+					dto.DateNumber = date.dateNumber;
 					dto.CategoryId = date.CategoryId;
 					dto.MatchesIds = date.Matches
 						.Select(m => m.Id)
@@ -67,6 +69,7 @@ namespace WebService
 				{
 					DateDTO dto = new DateDTO();
 					dto.Id = date.Id;
+					dto.DateNumber = date.dateNumber;
 					dto.CategoryId = date.CategoryId;
 					dto.MatchesIds = date.Matches
 						.Select(m => m.Id)
