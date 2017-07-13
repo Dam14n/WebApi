@@ -21,13 +21,16 @@ namespace WebService
 					dto.Id = team.Id;
 					dto.Location = team.Location;
 					dto.Logo = team.Logo;
-					dto.MatchesIds = team.LocalMatches
+					dto.LocalMatchesIds = team.LocalMatches
 						.Select(m => m.Id)
-						.ToList().Concat(team.AwayMatches
+						.ToList();
+					dto.AwayMatchesIds = team.AwayMatches
 						.Select(m => m.Id)
-						.ToList()).ToList();
-					;
+						.ToList();
 					dto.Name = team.Name;
+					dto.GoalsIds = team.Goals
+						.Select(m => m.Id)
+						.ToList();
 					dto.PlayersIds = team.Players
 						.Select(m => m.Id)
 						.ToList();
@@ -60,12 +63,16 @@ namespace WebService
 					dto.Id = team.Id;
 					dto.Location = team.Location;
 					dto.Logo = team.Logo;
-					dto.MatchesIds = team.LocalMatches
+					dto.LocalMatchesIds = team.LocalMatches
 						.Select(m => m.Id)
-						.ToList().Concat(team.AwayMatches
+						.ToList();
+					dto.AwayMatchesIds = team.AwayMatches
 						.Select(m => m.Id)
-						.ToList()).ToList();
+						.ToList();
 					dto.Name = team.Name;
+					dto.GoalsIds = team.Goals
+						.Select(m => m.Id)
+						.ToList();
 					dto.PlayersIds = team.Players
 						.Select(m => m.Id)
 						.ToList();
@@ -81,8 +88,12 @@ namespace WebService
 			{
 				List<Team> teams = db.Teams
 					.Where(m => (m.AwayMatches
-						.Select(p => p.Id)
-						.Contains(matchId) || m.LocalMatches.Select(p => p.Id).Contains(matchId)) && m.Id == id)
+									.Select(p => p.Id)
+									.Contains(matchId) ||
+								m.LocalMatches
+									.Select(p => p.Id)
+									.Contains(matchId))
+							&& m.Id == id)
 					.ToList();
 				List<TeamDTO> dtos = new List<TeamDTO>();
 
@@ -92,12 +103,16 @@ namespace WebService
 					dto.Id = team.Id;
 					dto.Location = team.Location;
 					dto.Logo = team.Logo;
-					dto.MatchesIds = team.LocalMatches
+					dto.LocalMatchesIds = team.LocalMatches
 						.Select(m => m.Id)
-						.ToList().Concat(team.AwayMatches
+						.ToList();
+					dto.AwayMatchesIds = team.AwayMatches
 						.Select(m => m.Id)
-						.ToList()).ToList();
+						.ToList();
 					dto.Name = team.Name;
+					dto.GoalsIds = team.Goals
+						.Select(m => m.Id)
+						.ToList();
 					dto.PlayersIds = team.Players
 						.Select(m => m.Id)
 						.ToList();
