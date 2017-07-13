@@ -23,6 +23,12 @@ namespace DTO
 		public List<int> PlayersIds { get; set; }
 
 		[DataMember]
-		public List<int> MatchesIds { get; set; }
+		public List<int> LocalMatchesIds { get; set; }
+
+		[DataMember]
+		public List<int> AwayMatchesIds { get; set; }
+
+		[DataMember]
+		public List<int> GoalsIds { get; set; }
 	}
 }
