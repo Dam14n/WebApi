@@ -20,6 +20,7 @@ namespace DataLayer
 		public DbSet<User> Users { get; set; }
 		public DbSet<Favorite> Favorites { get; set; }
 		public DbSet<Date> Dates { get; set; }
+        public DbSet<Club> Clubs { get; set; }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{

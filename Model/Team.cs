@@ -10,8 +10,9 @@ namespace Model
 
 		public virtual int Id { get; private set; }
 		public virtual string Name { get; set; }
-		public virtual string Location { get; set; }
-		public virtual int Logo { get; set; }
+        public virtual int ClubId { get; set; }
+        public virtual Club Club { get; set; }
+
 		private IList<Player> players;
 
 		public virtual IList<Player> Players

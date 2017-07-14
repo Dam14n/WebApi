@@ -44,11 +44,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs" />
+    <Compile Include="Club.cs" />
     <Compile Include="Date.cs" />
     <Compile Include="Division.cs" />
     <Compile Include="Favorite.cs" />
     <Compile Include="Goal.cs" />
     <Compile Include="IIdentificable.cs" />
+    <Compile Include="Logo.cs" />
     <Compile Include="Match.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
