@@ -19,8 +19,6 @@ namespace WebService
 				{
 					TeamDTO dto = new TeamDTO();
 					dto.Id = team.Id;
-					dto.Location = team.Location;
-					dto.Logo = team.Logo;
 					dto.LocalMatchesIds = team.LocalMatches
 						.Select(m => m.Id)
 						.ToList();
@@ -61,8 +59,6 @@ namespace WebService
 				{
 					TeamDTO dto = new TeamDTO();
 					dto.Id = team.Id;
-					dto.Location = team.Location;
-					dto.Logo = team.Logo;
 					dto.LocalMatchesIds = team.LocalMatches
 						.Select(m => m.Id)
 						.ToList();
@@ -101,8 +97,6 @@ namespace WebService
 				{
 					TeamDTO dto = new TeamDTO();
 					dto.Id = team.Id;
-					dto.Location = team.Location;
-					dto.Logo = team.Logo;
 					dto.LocalMatchesIds = team.LocalMatches
 						.Select(m => m.Id)
 						.ToList();

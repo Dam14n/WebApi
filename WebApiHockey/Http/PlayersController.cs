@@ -3,7 +3,7 @@ using System.Web.Http;
 using DTO;
 using WebService;
 
-namespace WebApiHockey.Controllers
+namespace WebApiHockey.Http
 {
 	[RoutePrefix("api/players")]
 	public class PlayersController : ApiController

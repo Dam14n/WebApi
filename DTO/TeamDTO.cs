@@ -14,12 +14,6 @@ namespace DTO
 		public string Name { get; set; }
 
 		[DataMember]
-		public string Location { get; set; }
-
-		[DataMember]
-		public int Logo { get; set; }
-
-		[DataMember]
 		public List<int> PlayersIds { get; set; }
 
 		[DataMember]

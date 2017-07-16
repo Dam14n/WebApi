@@ -174,17 +174,20 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\CategoriesController.cs" />
-    <Compile Include="Controllers\FavoritesController.cs" />
-    <Compile Include="Controllers\DatesController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
-    <Compile Include="Controllers\TeamsController.cs" />
-    <Compile Include="Controllers\PlayersController.cs" />
-    <Compile Include="Controllers\MatchesController.cs" />
-    <Compile Include="Controllers\GoalsController.cs" />
-    <Compile Include="Controllers\SubDivisionsController.cs" />
-    <Compile Include="Controllers\DivisionsController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Http\CategoriesController.cs" />
+    <Compile Include="Http\BoardsController.cs" />
+    <Compile Include="Mvc\ApiController.cs" />
+    <Compile Include="Http\FavoritesController.cs" />
+    <Compile Include="Http\DatesController.cs" />
+    <Compile Include="Http\UsersController.cs" />
+    <Compile Include="Http\TeamsController.cs" />
+    <Compile Include="Http\PlayersController.cs" />
+    <Compile Include="Http\MatchesController.cs" />
+    <Compile Include="Http\GoalsController.cs" />
+    <Compile Include="Http\SubDivisionsController.cs" />
+    <Compile Include="Http\DivisionsController.cs" />
+    <Compile Include="Mvc\DivisionController.cs" />
+    <Compile Include="Mvc\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -305,6 +308,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Api\Index.cshtml" />
+    <Content Include="Views\Division\Index.cshtml" />
+    <Content Include="Views\Division\Create.cshtml" />
+    <Content Include="Views\Division\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

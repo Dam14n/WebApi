@@ -446,3 +446,7 @@ __pycache__/
 /WebApiHockey/obj/Debug/WebApiHockey.pdb
 /WebService/bin/Debug/WebService.pdb
 /WebService/obj/Debug/WebService.pdb
+*.txt
+*.cache
+*.txt
+*.cache
