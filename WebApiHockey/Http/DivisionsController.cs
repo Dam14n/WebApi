@@ -34,7 +34,7 @@ namespace WebApiHockey.Http
 			return Ok(division);
 		}
 
-		[Route("create/{divisionDTO}")]
+		[Route("create")]
 		[HttpPost]
 		public IHttpActionResult Create(DivisionDTO divisionDTO)
 		{
@@ -58,7 +58,7 @@ namespace WebApiHockey.Http
 			return Ok();
 		}
 
-		[Route("put/{divisionDTO}")]
+		[Route("put")]
 		[HttpPut]
 		public IHttpActionResult Put(DivisionDTO divisionDto)
 		{
