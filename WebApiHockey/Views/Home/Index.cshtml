@@ -24,7 +24,9 @@
 							.state("Home", { url: '/Home', templateUrl: '/Angular/Views/Home.html' })
 							.state("Api", { url: '/Api', templateUrl: '/Angular/Views/Api.html' })
 							.state("Api.Divisions", { url: '/Divisions', templateUrl: '/Angular/Views/Divisions.html', controller: "DivisionsController" })
-							.state("Api.Division", { url: '/Divisions/:id?', templateUrl: '/Angular/Views/Division.html', controller: "DivisionController" });
+							.state("Api.Division", { url: '/Divisions/:id?', templateUrl: '/Angular/Views/Division.html', controller: "DivisionController" })
+							.state("Api.SubDivisions", { url: '/SubDivisions', templateUrl: '/Angular/Views/SubDivisions.html', controller: "SubDivisionsController" })
+							.state("Api.SubDivision", { url: '/SubDivisions/:id?', templateUrl: '/Angular/Views/SubDivision.html', controller: "SubDivisionController" });
 					}]);
 		})();
 	</script>

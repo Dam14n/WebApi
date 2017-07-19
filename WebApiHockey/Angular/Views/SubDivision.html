@@ -1,0 +1,22 @@
+<div class="panel panel-default">
+	<h2 class="verde text-center">{{mode}} de Division</h2>
+	<div class="panel-body">
+		<div class="col-md-4 col-md-offset-4">
+			<form name="form">
+
+				<div class="form-group">
+					<input type="text" class="form-control" name="divisionName" placeholder="Name" title="Name" data-ng-model="subDivision.Name" data-ng-required="true" />
+				</div>
+				<div class="form-group">
+					<select class="form-control" name="DivisionSelect" data-ng-model="subDivision.DivisionId" data-ng-options="division.Id as division.Name for division in divisions" data-ng-required="true">
+					</select>
+				</div>
+				<div>
+					<button type="submit" class="btn btn-lg btn-success" ui-sref="^.SubDivisions" data-ng-click="submitForm()" data-ng-disabled="!ready || form.$invalid">GUARDAR</button>
+					<button type="button" class="btn btn-lg btn-secondary" data-ng-click="cancelForm()">CANCELAR</button>
+				</div>
+			</form>
+			<hr class="cincuenta" />
+		</div>
+	</div>
+</div>

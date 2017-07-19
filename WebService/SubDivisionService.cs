@@ -79,5 +79,45 @@ namespace WebService
 				return dtos.FirstOrDefault();
 			}
 		}
+
+		public void Create(SubDivisionDTO subDivisionDTO)
+		{
+			using (var db = new ModelContext())
+			{
+				SubDivision subDivision = db.SubDivisions.Create();
+				subDivision.Name = subDivisionDTO.Name;
+				subDivision.DivisionId = subDivisionDTO.DivisionId;
+				db.SubDivisions.Add(subDivision);
+				db.SaveChanges();
+			}
+		}
+
+		public void Delete(int id)
+		{
+			using (var db = new ModelContext())
+			{
+				SubDivision subDivision = db.SubDivisions
+					.Where(m => m.Id == id)
+					.FirstOrDefault();
+				db.Entry(subDivision).State = System.Data.EntityState.Deleted;
+				db.SaveChanges();
+			}
+		}
+
+		public void Put(SubDivisionDTO subDivisionDTO)
+		{
+			using (var db = new ModelContext())
+			{
+				SubDivision existingSubDivision = db.SubDivisions
+					.Where(m => m.Id == subDivisionDTO.Id)
+					.FirstOrDefault();
+				if (existingSubDivision != null)
+				{
+					existingSubDivision.Name = subDivisionDTO.Name;
+					existingSubDivision.DivisionId = subDivisionDTO.DivisionId;
+					db.SaveChanges();
+				}
+			}
+		}
 	}
 }
