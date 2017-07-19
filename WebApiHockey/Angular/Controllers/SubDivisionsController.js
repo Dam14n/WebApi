@@ -15,7 +15,6 @@
 
 		$scope.deleteSubDivision = function deleteSubDivision(subdivision) {
 			$http.delete('/api/subdivisions/delete/' + subdivision.Id).then(function (response) {
-				$scope.listSubDivisions = response.data;
 				$state.reload();
 			});
 		};
