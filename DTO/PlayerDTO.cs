@@ -14,7 +14,7 @@ namespace DTO
 		public int Age { get; set; }
 
 		[DataMember]
-		public int TeamId { get; set; }
+		public int? TeamId { get; set; }
 
 		[DataMember]
 		public List<int> GoalsIds { get; set; }
