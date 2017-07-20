@@ -21,6 +21,7 @@ namespace WebService
 					dto.Id = goal.Id;
 					dto.MatchId = goal.MatchId;
 					dto.PlayerId = goal.PlayerId;
+					dto.TeamId = goal.TeamId;
 					dtos.Add(dto);
 				}
 				return dtos;
@@ -46,6 +47,7 @@ namespace WebService
 					dto.Id = goal.Id;
 					dto.MatchId = goal.MatchId;
 					dto.PlayerId = goal.PlayerId;
+					dto.TeamId = goal.TeamId;
 					dtos.Add(dto);
 				}
 				return dtos;
@@ -65,6 +67,7 @@ namespace WebService
 					dto.Id = goal.Id;
 					dto.MatchId = goal.MatchId;
 					dto.PlayerId = goal.PlayerId;
+					dto.TeamId = goal.TeamId;
 					dtos.Add(dto);
 				}
 				return dtos.FirstOrDefault();
@@ -84,6 +87,7 @@ namespace WebService
 					dto.Id = goal.Id;
 					dto.MatchId = goal.MatchId;
 					dto.PlayerId = goal.PlayerId;
+					dto.TeamId = goal.TeamId;
 					dtos.Add(dto);
 				}
 				return dtos;
@@ -103,6 +107,7 @@ namespace WebService
 					dto.Id = goal.Id;
 					dto.MatchId = goal.MatchId;
 					dto.PlayerId = goal.PlayerId;
+					dto.TeamId = goal.TeamId;
 					dtos.Add(dto);
 				}
 				return dtos.FirstOrDefault();
@@ -122,6 +127,7 @@ namespace WebService
 					dto.Id = goal.Id;
 					dto.MatchId = goal.MatchId;
 					dto.PlayerId = goal.PlayerId;
+					dto.TeamId = goal.TeamId;
 					dtos.Add(dto);
 				}
 				return dtos;
@@ -141,6 +147,7 @@ namespace WebService
 					dto.Id = goal.Id;
 					dto.MatchId = goal.MatchId;
 					dto.PlayerId = goal.PlayerId;
+					dto.TeamId = goal.TeamId;
 					dtos.Add(dto);
 				}
 				return dtos;
@@ -160,9 +167,52 @@ namespace WebService
 					dto.Id = goal.Id;
 					dto.MatchId = goal.MatchId;
 					dto.PlayerId = goal.PlayerId;
+					dto.TeamId = goal.TeamId;
 					dtos.Add(dto);
 				}
 				return dtos.FirstOrDefault();
+			}
+		}
+
+		public void Create(GoalDTO goalDTO)
+		{
+			using (var db = new ModelContext())
+			{
+				Goal goal = db.Goals.Create();
+				goal.MatchId = goalDTO.MatchId;
+				goal.PlayerId = goalDTO.PlayerId;
+				goal.TeamId = goalDTO.TeamId;
+				db.Goals.Add(goal);
+				db.SaveChanges();
+			}
+		}
+
+		public void Delete(int id)
+		{
+			using (var db = new ModelContext())
+			{
+				Goal goal = db.Goals
+					.Where(m => m.Id == id)
+					.FirstOrDefault();
+				db.Entry(goal).State = System.Data.EntityState.Deleted;
+				db.SaveChanges();
+			}
+		}
+
+		public void Put(GoalDTO goalDTO)
+		{
+			using (var db = new ModelContext())
+			{
+				Goal existingGoal = db.Goals
+					.Where(m => m.Id == goalDTO.Id)
+					.FirstOrDefault();
+				if (existingGoal != null)
+				{
+					existingGoal.TeamId = goalDTO.TeamId;
+					existingGoal.MatchId = goalDTO.MatchId;
+					existingGoal.PlayerId = goalDTO.PlayerId;
+					db.SaveChanges();
+				}
 			}
 		}
 	}

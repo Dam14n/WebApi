@@ -14,6 +14,7 @@
 			$scope.enemyGoals = [];
 			$scope.localPlayers = [];
 			$scope.enemyPlayers = [];
+			var goalsToDelete = [];
 
 			function initialize(matchId) {
 				var promises = matchId ? getMatch(matchId) : [];
@@ -53,15 +54,15 @@
 					$scope.ready = false;
 					if ($stateParams.id != "") {
 						$http.put('/api/matches/' + entityMode, JSON.stringify($scope.match)).then(function (response) {
-							$state.reload();
 							submitGoals($scope.localGoals);
 							submitGoals($scope.enemyGoals);
+							deleteGoals();
 						});
 					} else {
 						$http.post('/api/matches/' + entityMode, JSON.stringify($scope.match)).then(function (response) {
-							$state.reload();
 							submitGoals($scope.localGoals);
 							submitGoals($scope.enemyGoals);
+							deleteGoals();
 						});
 					}
 				}
@@ -78,7 +79,18 @@
 						});
 					}
 				});
+				$state.reload();
 			};
+
+			var deleteGoals = function () {
+				angular.forEach(goalsToDelete, function (goal) {
+					if (goal.Id != null) {
+						$http.delete('/api/goals/delete/' + goal.Id).then(function (response) {
+						});
+					}
+				});
+				$state.reload();
+			}
 
 			$scope.updateLocalPlayers = function (teamId) {
 				if (teamId) {
@@ -100,9 +112,9 @@
 
 			$scope.addNew = function (teamId) {
 				if (teamId == $scope.match.LocalTeamId) {
-					$scope.localGoals.push({ MatchId: $scope.match.Id });
+					$scope.localGoals.push({ MatchId: $scope.match.Id, TeamId: $scope.match.LocalTeamId });
 				} else {
-					$scope.enemyGoals.push({ MatchId: $scope.match.Id });
+					$scope.enemyGoals.push({ MatchId: $scope.match.Id, TeamId: $scope.match.EnemyTeamId });
 				}
 			};
 
@@ -119,6 +131,8 @@
 				angular.forEach(goals, function (goal) {
 					if (!goal.selected) {
 						newDataList.push(goal);
+					} else {
+						goalsToDelete.push(goal);
 					}
 				});
 				if (teamId == $scope.match.LocalTeamId) {
