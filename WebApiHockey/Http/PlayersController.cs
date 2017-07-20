@@ -33,5 +33,41 @@ namespace WebApiHockey.Http
 		{
 			return playerService.GetPlayerByTeam(teamId, id);
 		}
+
+		[Route("create")]
+		[HttpPost]
+		public IHttpActionResult Create(PlayerDTO playerDTO)
+		{
+			if (!ModelState.IsValid)
+			{
+				return BadRequest("Not a valid model");
+			}
+			playerService.Create(playerDTO);
+			return Ok();
+		}
+
+		[Route("delete/{id:int}")]
+		[HttpDelete]
+		public IHttpActionResult Delete(int id)
+		{
+			if (id <= 0)
+			{
+				return BadRequest("Not a valid division id");
+			}
+			playerService.Delete(id);
+			return Ok();
+		}
+
+		[Route("put")]
+		[HttpPut]
+		public IHttpActionResult Put(PlayerDTO playerDTO)
+		{
+			if (!ModelState.IsValid)
+			{
+				return BadRequest("Not a valid model");
+			}
+			playerService.Put(playerDTO);
+			return Ok();
+		}
 	}
 }

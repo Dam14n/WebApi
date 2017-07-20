@@ -82,5 +82,47 @@ namespace WebService
 				return dtos.FirstOrDefault();
 			}
 		}
+
+		public void Create(PlayerDTO playerDTO)
+		{
+			using (var db = new ModelContext())
+			{
+				Player player = db.Players.Create();
+				player.Name = playerDTO.Name;
+				player.Age = playerDTO.Age;
+				player.TeamId = playerDTO.TeamId;
+				db.Players.Add(player);
+				db.SaveChanges();
+			}
+		}
+
+		public void Delete(int id)
+		{
+			using (var db = new ModelContext())
+			{
+				Player player = db.Players
+					.Where(m => m.Id == id)
+					.FirstOrDefault();
+				db.Entry(player).State = System.Data.EntityState.Deleted;
+				db.SaveChanges();
+			}
+		}
+
+		public void Put(PlayerDTO playerDTO)
+		{
+			using (var db = new ModelContext())
+			{
+				Player existingPlayer = db.Players
+					.Where(m => m.Id == playerDTO.Id)
+					.FirstOrDefault();
+				if (existingPlayer != null)
+				{
+					existingPlayer.Name = playerDTO.Name;
+					existingPlayer.Age = playerDTO.Age;
+					existingPlayer.TeamId = playerDTO.TeamId;
+					db.SaveChanges();
+				}
+			}
+		}
 	}
 }
