@@ -195,6 +195,8 @@
     <Content Include="Angular\application.js" />
     <Content Include="Angular\Controllers\CategoryController.js" />
     <Content Include="Angular\Controllers\CategoriesController.js" />
+    <Content Include="Angular\Controllers\MatchController.js" />
+    <Content Include="Angular\Controllers\MatchesController.js" />
     <Content Include="Angular\Controllers\DatesController.js" />
     <Content Include="Angular\Controllers\DateController.js" />
     <Content Include="Angular\Controllers\SubDivisionController.js" />
@@ -207,6 +209,8 @@
     <Content Include="Angular\Views\ApiHome.html" />
     <Content Include="Angular\Views\Category.html" />
     <Content Include="Angular\Views\Categories.html" />
+    <Content Include="Angular\Views\Match.html" />
+    <Content Include="Angular\Views\Matches.html" />
     <Content Include="Angular\Views\Dates.html" />
     <Content Include="Angular\Views\Date.html" />
     <Content Include="Angular\Views\SubDivision.html" />

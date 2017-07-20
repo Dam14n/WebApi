@@ -97,5 +97,47 @@ namespace WebService
 				return dtos.FirstOrDefault();
 			}
 		}
+
+		public void Create(MatchDTO matchDTO)
+		{
+			using (var db = new ModelContext())
+			{
+				Match match = db.Matchs.Create();
+				match.DateId = matchDTO.DateId;
+				match.EnemyTeamId = matchDTO.EnemyTeamId;
+				match.LocalTeamId = matchDTO.LocalTeamId;
+				db.Matchs.Add(match);
+				db.SaveChanges();
+			}
+		}
+
+		public void Delete(int id)
+		{
+			using (var db = new ModelContext())
+			{
+				Match match = db.Matchs
+					.Where(m => m.Id == id)
+					.FirstOrDefault();
+				db.Entry(match).State = System.Data.EntityState.Deleted;
+				db.SaveChanges();
+			}
+		}
+
+		public void Put(MatchDTO matchDTO)
+		{
+			using (var db = new ModelContext())
+			{
+				Match existingMatch = db.Matchs
+					.Where(m => m.Id == matchDTO.Id)
+					.FirstOrDefault();
+				if (existingMatch != null)
+				{
+					existingMatch.DateId = matchDTO.DateId;
+					existingMatch.EnemyTeamId = matchDTO.EnemyTeamId;
+					existingMatch.LocalTeamId = matchDTO.LocalTeamId;
+					db.SaveChanges();
+				}
+			}
+		}
 	}
 }

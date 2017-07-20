@@ -30,7 +30,9 @@
 							.state("Api.Categories", { url: '/Categories', templateUrl: '/Angular/Views/Categories.html', controller: "CategoriesController" })
 							.state("Api.Category", { url: '/Categories/:id?', templateUrl: '/Angular/Views/Category.html', controller: "CategoryController" })
 							.state("Api.Dates", { url: '/Dates', templateUrl: '/Angular/Views/Dates.html', controller: "DatesController" })
-							.state("Api.Date", { url: '/Dates/:id?', templateUrl: '/Angular/Views/Date.html', controller: "DateController" });
+							.state("Api.Date", { url: '/Dates/:id?', templateUrl: '/Angular/Views/Date.html', controller: "DateController" })
+							.state("Api.Matches", { url: '/Matches', templateUrl: '/Angular/Views/Matches.html', controller: "MatchesController" })
+							.state("Api.Match", { url: '/Matches/:id?', templateUrl: '/Angular/Views/Match.html', controller: "MatchController" });
 					}]);
 		})();
 	</script>

@@ -33,7 +33,9 @@ namespace WebApiHockey
 						"~/Angular/Controllers/CategoriesController.js",
 						"~/Angular/Controllers/CategoryController.js",
 						"~/Angular/Controllers/DatesController.js",
-						"~/Angular/Controllers/DateController.js"));
+						"~/Angular/Controllers/DateController.js",
+						"~/Angular/Controllers/MatchesController.js",
+						"~/Angular/Controllers/MatchController.js"));
 
 			// Use the development version of Modernizr to develop with and learn from. Then, when you're
 			// ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
