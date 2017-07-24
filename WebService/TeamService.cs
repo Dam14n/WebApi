@@ -115,5 +115,43 @@ namespace WebService
 				return dtos.FirstOrDefault();
 			}
 		}
+
+		public void Create(TeamDTO teamDTO)
+		{
+			using (var db = new ModelContext())
+			{
+				Team team = db.Teams.Create();
+				team.Name = teamDTO.Name;
+				db.Teams.Add(team);
+				db.SaveChanges();
+			}
+		}
+
+		public void Delete(int id)
+		{
+			using (var db = new ModelContext())
+			{
+				Team team = db.Teams
+					.Where(m => m.Id == id)
+					.FirstOrDefault();
+				db.Entry(team).State = System.Data.EntityState.Deleted;
+				db.SaveChanges();
+			}
+		}
+
+		public void Put(TeamDTO teamDTO)
+		{
+			using (var db = new ModelContext())
+			{
+				Team existingTeam = db.Teams
+					.Where(m => m.Id == teamDTO.Id)
+					.FirstOrDefault();
+				if (existingTeam != null)
+				{
+					existingTeam.Name = teamDTO.Name;
+					db.SaveChanges();
+				}
+			}
+		}
 	}
 }

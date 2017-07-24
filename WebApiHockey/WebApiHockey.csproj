@@ -195,6 +195,8 @@
     <Content Include="Angular\application.js" />
     <Content Include="Angular\Controllers\CategoryController.js" />
     <Content Include="Angular\Controllers\CategoriesController.js" />
+    <Content Include="Angular\Controllers\TeamController.js" />
+    <Content Include="Angular\Controllers\TeamsController.js" />
     <Content Include="Angular\Controllers\PlayerController.js" />
     <Content Include="Angular\Controllers\PlayersController.js" />
     <Content Include="Angular\Controllers\GoalController.js" />
@@ -213,6 +215,8 @@
     <Content Include="Angular\Views\ApiHome.html" />
     <Content Include="Angular\Views\Category.html" />
     <Content Include="Angular\Views\Categories.html" />
+    <Content Include="Angular\Views\Team.html" />
+    <Content Include="Angular\Views\Teams.html" />
     <Content Include="Angular\Views\Player.html" />
     <Content Include="Angular\Views\Players.html" />
     <Content Include="Angular\Views\Goals.html" />

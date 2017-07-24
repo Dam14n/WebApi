@@ -1,0 +1,48 @@
+<div class="panel panel-default">
+	<h2 class="verde text-center">{{mode}} de Team</h2>
+	<div class="panel-body">
+		<div class="col-md-4 col-md-offset-4">
+			<form name="form">
+				<div class="form-group">
+					<input type="text" class="form-control" name="Name" placeholder="Name" title="Name" data-ng-model="team.Name" data-ng-required="true" />
+				</div>
+				<div class="form-group">
+					<input ng-hide="!playersTeam.length" type="button" class="btn btn-danger pull-right" ng-click="remove()" value="Remove">
+					<input type="button" ng-click="addNew()" class="btn btn-primary addnew pull-right" value="Add New">
+				</div>
+				<table class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>
+								<input type="checkbox" ng-model="SelectedAll" ng-click="checkAll()" /></th>
+							<th>Player</th>
+							<th>Id</th>
+							<th>Name</th>
+							<th>Age</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="playerTeam in playersTeam">
+							<td>
+								<input type="checkbox" ng-model="playerTeam.selected" /></td>
+							<td>
+								<select class="form-control" ng-click="addPlayer(playerTeam)" ng-model="playerTeam" data-ng-options="player as player.Name for player in players" data-ng-required="true">
+								</select></td>
+							<td>
+								<input type="label" ng-model="playerTeam.Id" disabled /></td>
+							<td>
+								<input type="label" ng-model="playerTeam.Name" disabled /></td>
+							<td>
+								<input type="label" ng-model="playerTeam.Age" disabled /></td>
+						</tr>
+					</tbody>
+				</table>
+				<div>
+					<button type="submit" class="btn btn-lg btn-success" ui-sref="^.Teams" data-ng-click="submitForm()" data-ng-disabled="!ready || form.$invalid">GUARDAR</button>
+					<button type="button" class="btn btn-lg btn-secondary" data-ng-click="cancelForm()">CANCELAR</button>
+				</div>
+			</form>
+			<hr class="cincuenta" />
+		</div>
+	</div>
+</div>
