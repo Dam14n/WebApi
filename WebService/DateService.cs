@@ -19,7 +19,7 @@ namespace WebService
 				{
 					DateDTO dto = new DateDTO();
 					dto.Id = date.Id;
-					dto.DateNumber = date.dateNumber;
+					dto.DateNumber = date.DateNumber;
 					dto.CategoryId = date.CategoryId;
 					dto.MatchesIds = date.Matches
 						.Select(m => m.Id)
@@ -47,7 +47,7 @@ namespace WebService
 				{
 					DateDTO dto = new DateDTO();
 					dto.Id = date.Id;
-					dto.DateNumber = date.dateNumber;
+					dto.DateNumber = date.DateNumber;
 					dto.CategoryId = date.CategoryId;
 					dto.MatchesIds = date.Matches
 						.Select(m => m.Id)
@@ -69,7 +69,7 @@ namespace WebService
 				{
 					DateDTO dto = new DateDTO();
 					dto.Id = date.Id;
-					dto.DateNumber = date.dateNumber;
+					dto.DateNumber = date.DateNumber;
 					dto.CategoryId = date.CategoryId;
 					dto.MatchesIds = date.Matches
 						.Select(m => m.Id)
@@ -77,6 +77,46 @@ namespace WebService
 					dtos.Add(dto);
 				}
 				return dtos.FirstOrDefault();
+			}
+		}
+
+		public void Create(DateDTO dateDTO)
+		{
+			using (var db = new ModelContext())
+			{
+				Date date = db.Dates.Create();
+				date.DateNumber = dateDTO.DateNumber;
+				date.CategoryId = dateDTO.CategoryId;
+				db.Dates.Add(date);
+				db.SaveChanges();
+			}
+		}
+
+		public void Delete(int id)
+		{
+			using (var db = new ModelContext())
+			{
+				Date date = db.Dates
+					.Where(m => m.Id == id)
+					.FirstOrDefault();
+				db.Entry(date).State = System.Data.EntityState.Deleted;
+				db.SaveChanges();
+			}
+		}
+
+		public void Put(DateDTO dateDTO)
+		{
+			using (var db = new ModelContext())
+			{
+				Date existingDate = db.Dates
+					.Where(m => m.Id == dateDTO.Id)
+					.FirstOrDefault();
+				if (existingDate != null)
+				{
+					existingDate.DateNumber = dateDTO.DateNumber;
+					existingDate.CategoryId = dateDTO.CategoryId;
+					db.SaveChanges();
+				}
 			}
 		}
 	}

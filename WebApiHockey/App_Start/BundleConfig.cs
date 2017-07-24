@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace WebApiHockey
 {
@@ -17,6 +16,32 @@ namespace WebApiHockey
 			bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
 						"~/Scripts/jquery.unobtrusive*",
 						"~/Scripts/jquery.validate*"));
+
+			bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+						"~/Scripts/angular.js",
+						"~/Scripts/angular-ui-router.js",
+						"~/Angular/application.js"));
+
+			bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+						"~/Scripts/bootstrap.js"));
+
+			bundles.Add(new ScriptBundle("~/bundles/controllers").Include(
+						"~/Angular/Controllers/DivisionsController.js",
+						"~/Angular/Controllers/DivisionController.js",
+						"~/Angular/Controllers/SubDivisionsController.js",
+						"~/Angular/Controllers/SubDivisionController.js",
+						"~/Angular/Controllers/CategoriesController.js",
+						"~/Angular/Controllers/CategoryController.js",
+						"~/Angular/Controllers/DatesController.js",
+						"~/Angular/Controllers/DateController.js",
+						"~/Angular/Controllers/MatchesController.js",
+						"~/Angular/Controllers/MatchController.js",
+						"~/Angular/Controllers/GoalsController.js",
+						"~/Angular/Controllers/GoalController.js",
+						"~/Angular/Controllers/PlayersController.js",
+						"~/Angular/Controllers/PlayerController.js",
+						"~/Angular/Controllers/TeamsController.js",
+						"~/Angular/Controllers/TeamController.js"));
 
 			// Use the development version of Modernizr to develop with and learn from. Then, when you're
 			// ready for production, use the build tool at http://modernizr.com to pick only the tests you need.

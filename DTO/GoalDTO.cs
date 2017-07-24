@@ -13,6 +13,9 @@ namespace DTO
 		public int PlayerId { get; set; }
 
 		[DataMember]
+		public int TeamId { get; set; }
+
+		[DataMember]
 		public int Id { get; set; }
 	}
 }

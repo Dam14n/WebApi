@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+	<h2 class="verde text-center">Goals</h2>
+	<div class="panel-body">
+		<div class="table">
+			<div class="row header green">
+				<div class="cell">Id</div>
+				<div class="cell">Match</div>
+				<div class="cell">Team</div>
+				<div class="cell">Player</div>
+			</div>
+			<div class="row" ng-repeat="goal in listGoals">
+				<div class="cell">{{goal.Id}}</div>
+				<div class="cell">{{goal.MatchId}}</div>
+				<div class="cell">{{goal.TeamId}}</div>
+				<div class="cell">{{goal.PlayerId}}</div>
+				<div class="cell">
+					<a class="btn btn-xsm btn-primary edit" ui-sref="^.Goal({id: {{goal.Id}}})"><span class="glyphicon glyphicon-edit"></span>EDITAR</a>
+					<a class="btn btn-xsm btn-danger delete" ng-click="deleteGoal(goal)" ui-sref="^.Goals"><span class="glyphicon glyphicon-remove-sign"></span>ELIMINAR</a>
+				</div>
+			</div>
+		</div>
+		<a class="btn btn-xsm btn-primary edit" ui-sref="^.Goal"><span class="glyphicon glyphicon-edit"></span>CREAR</a>
+	</div>
+	<hr class="cincuenta" />
+</div>

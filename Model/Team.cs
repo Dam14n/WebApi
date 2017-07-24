@@ -8,16 +8,17 @@ namespace Model
 		{
 		}
 
-		public virtual int Id { get; private set; }
+		public virtual int Id { get; set; }
 		public virtual string Name { get; set; }
-		public virtual string Location { get; set; }
-		public virtual int Logo { get; set; }
+		public virtual int? ClubId { get; set; }
+		public virtual Club Club { get; set; }
+
 		private IList<Player> players;
 
 		public virtual IList<Player> Players
 		{
 			get { return this.players ?? (this.players = new List<Player>()); }
-			protected set { this.players = value; }
+			set { this.players = value; }
 		}
 
 		private IList<Match> localMatches;
@@ -25,7 +26,7 @@ namespace Model
 		public virtual IList<Match> LocalMatches
 		{
 			get { return this.localMatches ?? (this.localMatches = new List<Match>()); }
-			protected set { this.localMatches = value; }
+			set { this.localMatches = value; }
 		}
 
 		private IList<Match> awayMatches;
@@ -33,7 +34,7 @@ namespace Model
 		public virtual IList<Match> AwayMatches
 		{
 			get { return this.awayMatches ?? (this.awayMatches = new List<Match>()); }
-			protected set { this.awayMatches = value; }
+			set { this.awayMatches = value; }
 		}
 
 		private IList<Goal> goals;
@@ -41,7 +42,77 @@ namespace Model
 		public virtual IList<Goal> Goals
 		{
 			get { return this.goals ?? (this.goals = new List<Goal>()); }
-			protected set { this.goals = value; }
+			set { this.goals = value; }
+		}
+
+		public int GetWinMatches()
+		{
+			int winMatches = 0;
+			foreach (Match match in localMatches)
+			{
+				if (match.GetResult(this.Id) == MatchResult.WIN)
+				{
+					winMatches += 1;
+				}
+			}
+			foreach (Match match in awayMatches)
+			{
+				if (match.GetResult(this.Id) == MatchResult.WIN)
+				{
+					winMatches += 1;
+				}
+			}
+			return winMatches;
+		}
+
+		public int GetTieMatches()
+		{
+			int tieMatches = 0;
+			foreach (Match match in localMatches)
+			{
+				if (match.GetResult(this.Id) == MatchResult.TIE)
+				{
+					tieMatches += 1;
+				}
+			}
+			foreach (Match match in awayMatches)
+			{
+				if (match.GetResult(this.Id) == MatchResult.TIE)
+				{
+					tieMatches += 1;
+				}
+			}
+			return tieMatches;
+		}
+
+		public int GetLoseMatches()
+		{
+			int loseMatches = 0;
+			foreach (Match match in localMatches)
+			{
+				if (match.GetResult(this.Id) == MatchResult.LOSE)
+				{
+					loseMatches += 1;
+				}
+			}
+			foreach (Match match in awayMatches)
+			{
+				if (match.GetResult(this.Id) == MatchResult.LOSE)
+				{
+					loseMatches += 1;
+				}
+			}
+			return loseMatches;
+		}
+
+		public int GetAgainstGoals()
+		{
+			int againstGoals = 0;
+			foreach (Match match in awayMatches)
+			{
+				againstGoals += match.GetGoalsAgainst(this.Id);
+			}
+			return againstGoals;
 		}
 	}
 }

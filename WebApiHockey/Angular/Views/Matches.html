@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+	<h2 class="verde text-center">Matches</h2>
+	<div class="panel-body">
+		<div class="table">
+			<div class="row header green">
+				<div class="cell">Id</div>
+				<div class="cell">Date</div>
+				<div class="cell">LocalTeam</div>
+				<div class="cell">LocalGoals</div>
+				<div class="cell">EnemyTeam</div>
+				<div class="cell">EnemyGoals</div>
+			</div>
+			<div class="row" ng-repeat="match in listMatches">
+				<div class="cell">{{match.Id}}</div>
+				<div class="cell">{{match.DateId}}</div>
+				<div class="cell">{{match.LocalTeamId}}</div>
+				<div class="cell">{{match.LocalGoalsIds}}</div>
+				<div class="cell">{{match.EnemyTeamId}}</div>
+				<div class="cell">{{match.EnemyGoalsIds}}</div>
+				<div class="cell">
+					<a class="btn btn-xsm btn-primary edit" ui-sref="^.Match({id: {{match.Id}}})"><span class="glyphicon glyphicon-edit"></span>EDITAR</a>
+					<a class="btn btn-xsm btn-danger delete" ng-click="deleteMatch(match)" ui-sref="^.Matches"><span class="glyphicon glyphicon-remove-sign"></span>ELIMINAR</a>
+				</div>
+			</div>
+		</div>
+		<a class="btn btn-xsm btn-primary edit" ui-sref="^.Match"><span class="glyphicon glyphicon-edit"></span>CREAR</a>
+	</div>
+	<hr class="cincuenta" />
+</div>

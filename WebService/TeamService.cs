@@ -19,8 +19,6 @@ namespace WebService
 				{
 					TeamDTO dto = new TeamDTO();
 					dto.Id = team.Id;
-					dto.Location = team.Location;
-					dto.Logo = team.Logo;
 					dto.LocalMatchesIds = team.LocalMatches
 						.Select(m => m.Id)
 						.ToList();
@@ -61,8 +59,6 @@ namespace WebService
 				{
 					TeamDTO dto = new TeamDTO();
 					dto.Id = team.Id;
-					dto.Location = team.Location;
-					dto.Logo = team.Logo;
 					dto.LocalMatchesIds = team.LocalMatches
 						.Select(m => m.Id)
 						.ToList();
@@ -101,8 +97,6 @@ namespace WebService
 				{
 					TeamDTO dto = new TeamDTO();
 					dto.Id = team.Id;
-					dto.Location = team.Location;
-					dto.Logo = team.Logo;
 					dto.LocalMatchesIds = team.LocalMatches
 						.Select(m => m.Id)
 						.ToList();
@@ -119,6 +113,44 @@ namespace WebService
 					dtos.Add(dto);
 				}
 				return dtos.FirstOrDefault();
+			}
+		}
+
+		public void Create(TeamDTO teamDTO)
+		{
+			using (var db = new ModelContext())
+			{
+				Team team = db.Teams.Create();
+				team.Name = teamDTO.Name;
+				db.Teams.Add(team);
+				db.SaveChanges();
+			}
+		}
+
+		public void Delete(int id)
+		{
+			using (var db = new ModelContext())
+			{
+				Team team = db.Teams
+					.Where(m => m.Id == id)
+					.FirstOrDefault();
+				db.Entry(team).State = System.Data.EntityState.Deleted;
+				db.SaveChanges();
+			}
+		}
+
+		public void Put(TeamDTO teamDTO)
+		{
+			using (var db = new ModelContext())
+			{
+				Team existingTeam = db.Teams
+					.Where(m => m.Id == teamDTO.Id)
+					.FirstOrDefault();
+				if (existingTeam != null)
+				{
+					existingTeam.Name = teamDTO.Name;
+					db.SaveChanges();
+				}
 			}
 		}
 	}

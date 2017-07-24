@@ -1,0 +1,25 @@
+<div class="panel panel-default">
+	<h2 class="verde text-center">SubDivisions</h2>
+	<div class="panel-body">
+		<div class="table">
+			<div class="row header green">
+				<div class="cell">Id</div>
+				<div class="cell">Name</div>
+				<div class="cell">Division</div>
+				<div class="cell">Categories</div>
+			</div>
+			<div class="row" ng-repeat="subDivision in listSubDivisions">
+				<div class="cell">{{subDivision.Id}}</div>
+				<div class="cell">{{subDivision.Name}}</div>
+				<div class="cell">{{subDivision.DivisionId}}</div>
+				<div class="cell">{{subDivision.CategoriesIds}}</div>
+				<div class="cell">
+					<a class="btn btn-xsm btn-primary edit" ui-sref="^.SubDivision({id: {{subDivision.Id}}})"><span class="glyphicon glyphicon-edit"></span>EDITAR</a>
+					<a class="btn btn-xsm btn-danger delete" ng-click="deleteSubDivision(subDivision)" ui-sref="^.SubDivisions"><span class="glyphicon glyphicon-remove-sign"></span>ELIMINAR</a>
+				</div>
+			</div>
+		</div>
+		<a class="btn btn-xsm btn-primary edit" ui-sref="^.SubDivision"><span class="glyphicon glyphicon-edit"></span>CREAR</a>
+	</div>
+	<hr class="cincuenta" />
+</div>
