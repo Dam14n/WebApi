@@ -14,6 +14,7 @@
 				var promises = playerId ? getPlayer(playerId) : [];
 				$http.get('/api/teams').then(function (response) {
 					$scope.teams = response.data;
+					$scope.teams.push({Name: "SIN EQUIPO"});
 				});
 				$scope.ready = true;
 			};
