@@ -19,9 +19,7 @@ namespace WebService
 				{
 					FavoriteDTO dto = new FavoriteDTO();
 					dto.Id = favorite.Id;
-					dto.CategoriesIds = favorite.Categories
-						.Select(m => m.Id)
-						.ToList();
+					dto.CategoryId = favorite.CategoryId;
 					dtos.Add(dto);
 				}
 				return dtos;

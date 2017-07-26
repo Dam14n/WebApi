@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Model
+﻿namespace Model
 {
-    public class Logo : IIdentificable
-    {
-        public virtual int Id { get; private set; }
-    }
+	public class Logo : IIdentificable
+	{
+		public virtual int Id { get; private set; }
+		public virtual int Width { get; set; }
+		public virtual int Height { get; set; }
+	}
 }

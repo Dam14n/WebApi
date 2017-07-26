@@ -14,6 +14,9 @@ namespace DTO
 		public string Name { get; set; }
 
 		[DataMember]
+		public int LogoId { get; set; }
+
+		[DataMember]
 		public List<int> PlayersIds { get; set; }
 
 		[DataMember]
