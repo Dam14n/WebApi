@@ -22,6 +22,8 @@ namespace WebService
 					dto.FavoritesIds = user.Favorites
 						.Select(m => m.Id)
 						.ToList();
+					dto.Email = user.Email;
+					dto.Name = user.Name;
 					dtos.Add(dto);
 				}
 				return dtos;

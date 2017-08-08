@@ -32,6 +32,7 @@ namespace WebService
 					dto.PlayersIds = team.Players
 						.Select(m => m.Id)
 						.ToList();
+					dto.LogoId = team.Club.Logo.Id;
 					dtos.Add(dto);
 				}
 				return dtos;
@@ -72,6 +73,7 @@ namespace WebService
 					dto.PlayersIds = team.Players
 						.Select(m => m.Id)
 						.ToList();
+					dto.LogoId = team.Club.Logo.Id;
 					dtos.Add(dto);
 				}
 				return dtos;
@@ -110,6 +112,7 @@ namespace WebService
 					dto.PlayersIds = team.Players
 						.Select(m => m.Id)
 						.ToList();
+					dto.LogoId = team.Club.Logo.Id;
 					dtos.Add(dto);
 				}
 				return dtos.FirstOrDefault();

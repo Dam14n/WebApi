@@ -11,6 +11,12 @@ namespace DTO
 		public int Id { get; set; }
 
 		[DataMember]
+		public string Name { get; set; }
+
+		[DataMember]
+		public string Email { get; set; }
+
+		[DataMember]
 		public List<int> FavoritesIds { get; set; }
 	}
 }
