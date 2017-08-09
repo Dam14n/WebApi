@@ -24,6 +24,7 @@ namespace WebApiHockey
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 
 			Database.SetInitializer(new MigrateDatabaseToLatestVersion<ModelContext, Configuration>());
+			//Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ModelContext>());
 		}
 	}
 }

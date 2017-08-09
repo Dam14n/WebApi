@@ -10,7 +10,7 @@ namespace DTO
 		public int MatchId { get; set; }
 
 		[DataMember]
-		public int PlayerId { get; set; }
+		public int? PlayerId { get; set; }
 
 		[DataMember]
 		public int TeamId { get; set; }

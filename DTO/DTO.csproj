@@ -49,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CategoryDTO.cs" />
+    <Compile Include="BoardDTO.cs" />
+    <Compile Include="PositionDTO.cs" />
     <Compile Include="DateDTO.cs" />
     <Compile Include="FavoriteDTO.cs" />
     <Compile Include="UserDTO.cs" />

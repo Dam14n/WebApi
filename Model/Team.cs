@@ -10,8 +10,16 @@ namespace Model
 
 		public virtual int Id { get; set; }
 		public virtual string Name { get; set; }
-		public virtual int? ClubId { get; set; }
+		public virtual int ClubId { get; set; }
 		public virtual Club Club { get; set; }
+
+		private IList<Position> positions;
+
+		public virtual IList<Position> Positions
+		{
+			get { return this.positions ?? (this.positions = new List<Position>()); }
+			set { this.positions = value; }
+		}
 
 		private IList<Player> players;
 
