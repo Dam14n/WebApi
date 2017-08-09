@@ -17,9 +17,15 @@ namespace WebApiHockey.Http
 		}
 
 		[Route("{id:int}")]
-		public PositionDTO Get(int id)
+		public PositionDTO GetPosition(int id)
 		{
 			return positionService.GetPosition(id);
+		}
+
+		[Route("~/api/boards/{boardId:int}/positions")]
+		public List<PositionDTO> GetPositionsByBoard(int boardId)
+		{
+			return positionService.GetPositionsByBoard(boardId);
 		}
 	}
 }
