@@ -22,6 +22,12 @@ namespace WebApiHockey.Http
 			return boardService.GetBoard(id);
 		}
 
+		[Route("~/api/categories/{categoryId:int}/boards")]
+		public List<BoardDTO> GetBoardsByCategory(int categoryId)
+		{
+			return boardService.GetBoardsByCategory(categoryId);
+		}
+
 		[Route("addpositions")]
 		[HttpPost]
 		public void Positions()

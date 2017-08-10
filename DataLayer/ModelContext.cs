@@ -40,6 +40,12 @@ namespace DataLayer
 			   .HasForeignKey(c => c.EnemyTeamId)
 			   .WillCascadeOnDelete(false);
 
+			modelBuilder.Entity<Category>()
+				.HasMany<Board>(c => c.Boards)
+				.WithRequired(x => x.Category)
+				.HasForeignKey(y => y.CategoryId)
+				.WillCascadeOnDelete(false);
+
 			modelBuilder.Entity<Goal>()
 				.HasRequired(c => c.Team)
 				.WithMany(p => p.Goals)

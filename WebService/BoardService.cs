@@ -13,14 +13,12 @@ namespace WebService
 		{
 			using (var db = new ModelContext())
 			{
-				Board board = db.Boards.Where(m => m.Id == 1).FirstOrDefault();
+				Board board = db.Boards.Where(m => m.Id == 3).FirstOrDefault();
 				List<Team> teams = db.Teams.Include(m => m.AwayMatches).Include(m => m.LocalMatches).ToList();
 
 				foreach (var team in teams)
 				{
 					Position position = db.Positions.Create();
-					//var lazyloadlocalmatches = team.LocalMatches.ToList();
-					//var lazyloadawaymatches = team.AwayMatches.ToList();
 					position.Team = team;
 					team.Positions.Add(position);
 					board.Positions.Add(position);
@@ -45,6 +43,7 @@ namespace WebService
 						.Select(m => m.Id)
 						.ToList();
 					dto.Name = board.Name;
+					dto.CategoryId = board.CategoryId;
 					dtos.Add(dto);
 				}
 				return dtos;
@@ -55,6 +54,11 @@ namespace WebService
 		{
 			List<BoardDTO> boards = this.GetAll().Where(m => m.Id == id).ToList();
 			return boards.FirstOrDefault();
+		}
+
+		public List<BoardDTO> GetBoardsByCategory(int categoryId)
+		{
+			return this.GetAll().Where(m => m.CategoryId == categoryId).ToList();
 		}
 	}
 }

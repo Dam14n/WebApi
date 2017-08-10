@@ -28,5 +28,13 @@ namespace Model
 			get { return this.favorites ?? (this.favorites = new List<Favorite>()); }
 			protected set { this.favorites = value; }
 		}
+
+		private IList<Board> boards;
+
+		public virtual IList<Board> Boards
+		{
+			get { return this.boards ?? (this.boards = new List<Board>()); }
+			protected set { this.boards = value; }
+		}
 	}
 }

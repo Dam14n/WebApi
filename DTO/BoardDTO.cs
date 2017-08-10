@@ -15,5 +15,8 @@ namespace DTO
 
 		[DataMember]
 		public List<int> PositionsIds { get; set; }
+
+		[DataMember]
+		public int CategoryId { get; set; }
 	}
 }

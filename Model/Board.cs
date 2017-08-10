@@ -6,6 +6,10 @@ namespace Model
 	{
 		public virtual int Id { get; private set; }
 		public virtual string Name { get; set; }
+
+		public virtual int CategoryId { get; set; }
+		public virtual Category Category { get; set; }
+
 		private IList<Position> positions;
 
 		public virtual IList<Position> Positions

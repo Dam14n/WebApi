@@ -25,6 +25,7 @@ namespace WebApiHockey
 
 			Database.SetInitializer(new MigrateDatabaseToLatestVersion<ModelContext, Configuration>());
 			//Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ModelContext>());
+			//Database.SetInitializer(new CreateDatabaseIfNotExists<ModelContext>());
 		}
 	}
 }
