@@ -7,62 +7,127 @@
 			// TODO: Complete member initialization
 		}
 
-		public virtual int Id { get; private set; }
-		public virtual Team Team { get; set; }
-		public virtual int Points { get { return this.GetPoints(); } protected set { } }
+		public int Id { get; private set; }
+
+		public int Rank { get; set; }
+
+		public int TeamId { get; set; }
+		public Team Team { get; set; }
+
+		public int BoardId { get; set; }
+		public Board Board { get; set; }
+
+		private int points;
+		public int Points { get { return this.GetPoints(); } protected set { } }
 
 		private int GetPoints()
 		{
-			return (this.Team.GetWinMatches() * 3) + this.Team.GetTieMatches();
+			if (Team == null)
+			{
+				return points;
+			}
+			else
+			{
+				return (this.Team.GetWinMatches() * 3) + this.Team.GetTieMatches();
+			}
 		}
 
-		public virtual int PlayedMatches { get { return this.GetPlayedMatches(); } protected set { } }
+		public int PlayedMatches { get { return this.GetPlayedMatches(); } protected set { } }
 
 		private int GetPlayedMatches()
 		{
-			return (this.Team.LocalMatches.Count + this.Team.AwayMatches.Count);
+			if (Team == null)
+			{
+				return points;
+			}
+			else
+			{
+				return (this.Team.LocalMatches.Count + this.Team.AwayMatches.Count);
+			}
 		}
 
-		public virtual int WinMatches { get { return this.GetWinMatches(); } protected set { } }
+		public int WinMatches { get { return this.GetWinMatches(); } protected set { } }
 
 		private int GetWinMatches()
 		{
-			return this.Team.GetWinMatches();
+			if (Team == null)
+			{
+				return points;
+			}
+			else
+			{
+				return this.Team.GetWinMatches();
+			}
 		}
 
-		public virtual int TieMatches { get { return this.GetTieMatches(); } protected set { } }
+		public int TieMatches { get { return this.GetTieMatches(); } protected set { } }
 
 		private int GetTieMatches()
 		{
-			return this.Team.GetTieMatches();
+			if (Team == null)
+			{
+				return points;
+			}
+			else
+			{
+				return this.Team.GetTieMatches();
+			}
 		}
 
-		public virtual int LoseMatches { get { return this.GetLoseMatches(); } protected set { } }
+		public int LoseMatches { get { return this.GetLoseMatches(); } protected set { } }
 
 		private int GetLoseMatches()
 		{
-			return this.Team.GetLoseMatches();
+			if (Team == null)
+			{
+				return points;
+			}
+			else
+			{
+				return this.Team.GetLoseMatches();
+			}
 		}
 
-		public virtual int FavorGoals { get { return this.GetFavorGoals(); } protected set { } }
+		public int FavorGoals { get { return this.GetFavorGoals(); } protected set { } }
 
 		private int GetFavorGoals()
 		{
-			return this.Team.Goals.Count;
+			if (Team == null)
+			{
+				return points;
+			}
+			else
+			{
+				return this.Team.Goals.Count;
+			}
 		}
 
-		public virtual int AgainstGoals { get { return this.GetAgainstGoals(); } protected set { } }
+		public int AgainstGoals { get { return this.GetAgainstGoals(); } protected set { } }
 
 		private int GetAgainstGoals()
 		{
-			return this.Team.GetAgainstGoals();
+			if (Team == null)
+			{
+				return points;
+			}
+			else
+			{
+				return this.Team.GetAgainstGoals();
+			}
 		}
 
-		public virtual int DifferenceGoals { get { return this.GetDifferenceGoals(); } protected set { } }
+		public int DifferenceGoals { get { return this.GetDifferenceGoals(); } protected set { } }
 
 		private int GetDifferenceGoals()
 		{
-			return (this.GetFavorGoals() - this.GetAgainstGoals());
+			if (Team == null)
+			{
+				return points;
+			}
+			else
+			{
+				return (this.GetFavorGoals() - this.GetAgainstGoals());
+			}
 		}
 	}
 }

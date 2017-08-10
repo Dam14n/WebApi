@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="CategoryService.cs" />
     <Compile Include="BoardService.cs" />
+    <Compile Include="PositionService.cs" />
     <Compile Include="DateService.cs" />
     <Compile Include="FavoriteService.cs" />
     <Compile Include="UserService.cs" />
