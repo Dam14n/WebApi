@@ -24,6 +24,8 @@ namespace WebService
 					board.Positions.Add(position);
 				}
 
+				board.orderPositions();
+
 				db.SaveChanges();
 			}
 		}

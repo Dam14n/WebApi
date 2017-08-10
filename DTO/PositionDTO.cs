@@ -10,6 +10,9 @@ namespace DTO
 		public int Id { get; set; }
 
 		[DataMember]
+		public int Rank { get; set; }
+
+		[DataMember]
 		public int TeamId { get; set; }
 
 		[DataMember]

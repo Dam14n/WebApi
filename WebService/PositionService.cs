@@ -13,7 +13,7 @@ namespace WebService
 		{
 			using (var db = new ModelContext())
 			{
-				List<Position> positions = db.Positions.Include(m => m.Team.AwayMatches).Include(m => m.Team.LocalMatches).OrderByDescending(m => m.Points).ToList();
+				List<Position> positions = db.Positions.Include(m => m.Team.AwayMatches).Include(m => m.Team.LocalMatches).OrderBy(m => m.Rank).ToList();
 				List<PositionDTO> dtos = new List<PositionDTO>();
 
 				foreach (var position in positions)
@@ -30,6 +30,7 @@ namespace WebService
 					dto.TeamId = position.TeamId;
 					dto.TieMatches = position.TieMatches;
 					dto.WinMatches = position.WinMatches;
+					dto.Rank = position.Rank;
 					dtos.Add(dto);
 				}
 				return dtos;

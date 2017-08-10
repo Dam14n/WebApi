@@ -9,6 +9,8 @@
 
 		public int Id { get; private set; }
 
+		public int Rank { get; set; }
+
 		public int TeamId { get; set; }
 		public Team Team { get; set; }
 
