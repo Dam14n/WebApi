@@ -44,7 +44,8 @@ namespace WebApiHockey
 						"~/Angular/Controllers/TeamController.js",
 						"~/Angular/Controllers/LogosController.js",
 						"~/Angular/Controllers/LogoController.js",
-						"~/Angular/Directives/fileread.js"));
+						"~/Angular/Controllers/ClubsController.js",
+						"~/Angular/Controllers/ClubController.js"));
 
 			// Use the development version of Modernizr to develop with and learn from. Then, when you're
 			// ready for production, use the build tool at http://modernizr.com to pick only the tests you need.

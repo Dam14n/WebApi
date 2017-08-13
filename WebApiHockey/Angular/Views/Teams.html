@@ -9,6 +9,7 @@
 				<div class="cell">LocalMatches</div>
 				<div class="cell">AwayMatches</div>
 				<div class="cell">Goals</div>
+				<div class="cell">Club</div>
 			</div>
 			<div class="row" ng-repeat="team in listTeams">
 				<div class="cell">{{team.Id}}</div>
@@ -17,6 +18,7 @@
 				<div class="cell">{{team.LocalMatchesIds}}</div>
 				<div class="cell">{{team.AwayMatchesIds}}</div>
 				<div class="cell">{{team.GoalsIds}}</div>
+				<div class="cell">{{team.ClubId}}</div>
 				<div class="cell">
 					<a class="btn btn-xsm btn-primary edit" ui-sref="^.Team({id: {{team.Id}}})"><span class="glyphicon glyphicon-edit"></span>EDITAR</a>
 					<a class="btn btn-xsm btn-danger delete" ng-click="deleteTeam(team)" ui-sref="^.Teams"><span class="glyphicon glyphicon-remove-sign"></span>ELIMINAR</a>

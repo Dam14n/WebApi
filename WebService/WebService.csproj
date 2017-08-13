@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="CategoryService.cs" />
     <Compile Include="BoardService.cs" />
+    <Compile Include="ClubService.cs" />
     <Compile Include="LogoService.cs" />
     <Compile Include="PositionService.cs" />
     <Compile Include="DateService.cs" />

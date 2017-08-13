@@ -12,6 +12,7 @@
 			$scope.playersTeam = [];
 			$scope.newPlayerTeam = [];
 			var playersLeftTeam = [];
+			$scope.clubs = [];
 
 			function initialize(teamId) {
 				var promises = teamId ? getTeam(teamId) : [];
@@ -27,6 +28,10 @@
 					$http.get('/api/teams/' + $scope.team.Id + '/players').then(function (response) {
 						$scope.playersTeam = response.data;
 					});
+					$http.get('/api/clubs').then(function (response) {
+						$scope.clubs = response.data;
+						$scope.clubs.push({ Name: "SIN CLUB" });
+					});
 				});
 			}
 
@@ -40,10 +45,12 @@
 					if ($stateParams.id != "") {
 						$http.put('/api/teams/' + entityMode, JSON.stringify($scope.team)).then(function (response) {
 							submitPlayers();
+							$state.reload();
 						});
 					} else {
 						$http.post('/api/teams/' + entityMode, JSON.stringify($scope.team)).then(function (response) {
 							submitPlayers();
+							$state.reload();
 						});
 					}
 				}

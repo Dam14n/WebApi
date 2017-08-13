@@ -32,7 +32,8 @@ namespace WebService
 					dto.PlayersIds = team.Players
 						.Select(m => m.Id)
 						.ToList();
-					dto.LogoId = team.Club.Logo.Id;
+					dto.LogoId = team.Club != null ? team.Club.LogoId : null;
+					dto.ClubId = team.ClubId;
 					dtos.Add(dto);
 				}
 				return dtos;
@@ -73,7 +74,8 @@ namespace WebService
 					dto.PlayersIds = team.Players
 						.Select(m => m.Id)
 						.ToList();
-					dto.LogoId = team.Club.Logo.Id;
+					dto.LogoId = team.Club != null ? team.Club.LogoId : null;
+					dto.ClubId = team.ClubId;
 					dtos.Add(dto);
 				}
 				return dtos;
@@ -112,7 +114,8 @@ namespace WebService
 					dto.PlayersIds = team.Players
 						.Select(m => m.Id)
 						.ToList();
-					dto.LogoId = team.Club.Logo.Id;
+					dto.LogoId = team.Club != null ? team.Club.LogoId : null;
+					dto.ClubId = team.ClubId;
 					dtos.Add(dto);
 				}
 				return dtos.FirstOrDefault();
@@ -125,6 +128,7 @@ namespace WebService
 			{
 				Team team = db.Teams.Create();
 				team.Name = teamDTO.Name;
+				team.ClubId = teamDTO.ClubId;
 				db.Teams.Add(team);
 				db.SaveChanges();
 			}
@@ -152,6 +156,7 @@ namespace WebService
 				if (existingTeam != null)
 				{
 					existingTeam.Name = teamDTO.Name;
+					existingTeam.ClubId = teamDTO.ClubId;
 					db.SaveChanges();
 				}
 			}
