@@ -40,6 +40,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,6 +52,7 @@
   <ItemGroup>
     <Compile Include="CategoryService.cs" />
     <Compile Include="BoardService.cs" />
+    <Compile Include="LogoService.cs" />
     <Compile Include="PositionService.cs" />
     <Compile Include="DateService.cs" />
     <Compile Include="FavoriteService.cs" />
