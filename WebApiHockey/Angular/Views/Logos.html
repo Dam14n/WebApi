@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+	<h2 class="verde text-center">Logos</h2>
+	<div class="panel-body">
+		<div class="table">
+			<div class="row header green">
+				<div class="cell">Id</div>
+				<div class="cell">Image</div>
+				<div class="cell">Width</div>
+				<div class="cell">Height</div>
+				<div class="cell">Name</div>
+				<div class="cell">Size</div>
+				<div class="cell">Type</div>
+			</div>
+			<div class="row" ng-repeat="logo in listLogos">
+				<div class="cell">{{logo.Id}}</div>
+				<div class="cell">
+					<img ng-src="data:image/png;base64,{{logo.Image}}" width="80" height="80" />
+				</div>
+				<div class="cell">{{logo.Width}}</div>
+				<div class="cell">{{logo.Height}}</div>
+				<div class="cell">{{logo.Name}}</div>
+				<div class="cell">{{logo.Size}}</div>
+				<div class="cell">{{logo.Type}}</div>
+				<div class="cell">
+					<a class="btn btn-xsm btn-primary edit" ui-sref="^.Logo({id: {{logo.Id}}})"><span class="glyphicon glyphicon-edit"></span>EDITAR</a>
+					<a class="btn btn-xsm btn-danger delete" ng-click="deleteLogo(logo)" ui-sref="^.Logos"><span class="glyphicon glyphicon-remove-sign"></span>ELIMINAR</a>
+				</div>
+			</div>
+		</div>
+		<a class="btn btn-xsm btn-primary edit" ui-sref="^.Logo"><span class="glyphicon glyphicon-edit"></span>CREAR</a>
+	</div>
+	<hr class="cincuenta" />
+</div>

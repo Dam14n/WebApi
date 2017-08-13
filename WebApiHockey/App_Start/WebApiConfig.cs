@@ -20,6 +20,8 @@ namespace WebApiHockey
 
 			config.Formatters.JsonFormatter.SupportedMediaTypes
 				.Add(new MediaTypeHeaderValue("text/html"));
+			config.Formatters.JsonFormatter.SupportedMediaTypes
+				.Add(new System.Net.Http.Headers.MediaTypeHeaderValue("multipart/form-data"));
 		}
 	}
 }

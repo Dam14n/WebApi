@@ -10,6 +10,10 @@
 					<input ng-hide="!playersTeam.length" type="button" class="btn btn-danger pull-right" ng-click="remove()" value="Remove">
 					<input type="button" ng-click="addNew()" class="btn btn-primary addnew pull-right" value="Add New">
 				</div>
+				<div>
+					<select class="form-control" ng-model="team.ClubId" data-ng-options="club.Id as club.Name for club in clubs">
+					</select></td>
+				</div>
 				<table class="table table-striped table-bordered">
 					<thead>
 						<tr>

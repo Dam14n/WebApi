@@ -176,6 +176,8 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Http\CategoriesController.cs" />
     <Compile Include="Http\BoardsController.cs" />
+    <Compile Include="Http\ClubController.cs" />
+    <Compile Include="Http\LogosController.cs" />
     <Compile Include="Http\PositionsController.cs" />
     <Compile Include="Http\FavoritesController.cs" />
     <Compile Include="Http\DatesController.cs" />
@@ -196,6 +198,10 @@
     <Content Include="Angular\application.js" />
     <Content Include="Angular\Controllers\CategoryController.js" />
     <Content Include="Angular\Controllers\CategoriesController.js" />
+    <Content Include="Angular\Controllers\ClubController.js" />
+    <Content Include="Angular\Controllers\ClubsController.js" />
+    <Content Include="Angular\Controllers\LogoController.js" />
+    <Content Include="Angular\Controllers\LogosController.js" />
     <Content Include="Angular\Controllers\TeamController.js" />
     <Content Include="Angular\Controllers\TeamsController.js" />
     <Content Include="Angular\Controllers\PlayerController.js" />
@@ -216,6 +222,10 @@
     <Content Include="Angular\Views\ApiHome.html" />
     <Content Include="Angular\Views\Category.html" />
     <Content Include="Angular\Views\Categories.html" />
+    <Content Include="Angular\Views\Clubs.html" />
+    <Content Include="Angular\Views\Club.html" />
+    <Content Include="Angular\Views\Logo.html" />
+    <Content Include="Angular\Views\Logos.html" />
     <Content Include="Angular\Views\Team.html" />
     <Content Include="Angular\Views\Teams.html" />
     <Content Include="Angular\Views\Player.html" />

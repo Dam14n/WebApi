@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+	<h2 class="verde text-center">Clubs</h2>
+	<div class="panel-body">
+		<div class="table">
+			<div class="row header green">
+				<div class="cell">Id</div>
+				<div class="cell">Name</div>
+				<div class="cell">Latitude</div>
+				<div class="cell">Longitude</div>
+				<div class="cell">Logo</div>
+				<div class="cell">Teams</div>
+			</div>
+			<div class="row" ng-repeat="club in listClubs">
+				<div class="cell">{{club.Id}}</div>
+				<div class="cell">{{club.Name}}</div>
+				<div class="cell">{{club.Latitude}}</div>
+				<div class="cell">{{club.Longitude}}</div>
+				<div class="cell">{{club.LogoId}}</div>
+				<div class="cell">{{club.TeamsIds}}</div>
+				<div class="cell">
+					<a class="btn btn-xsm btn-primary edit" ui-sref="^.Club({id: {{club.Id}}})"><span class="glyphicon glyphicon-edit"></span>EDITAR</a>
+					<a class="btn btn-xsm btn-danger delete" ng-click="deleteClub(club)" ui-sref="^.Clubs"><span class="glyphicon glyphicon-remove-sign"></span>ELIMINAR</a>
+				</div>
+			</div>
+		</div>
+		<a class="btn btn-xsm btn-primary edit" ui-sref="^.Club"><span class="glyphicon glyphicon-edit"></span>CREAR</a>
+	</div>
+	<hr class="cincuenta" />
+</div>

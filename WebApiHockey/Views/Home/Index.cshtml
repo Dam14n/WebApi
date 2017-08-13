@@ -38,7 +38,11 @@
 							.state("Api.Players", { url: '/Players', templateUrl: '/Angular/Views/Players.html', controller: "PlayersController" })
 							.state("Api.Player", { url: '/Players/:id?', templateUrl: '/Angular/Views/Player.html', controller: "PlayerController" })
 							.state("Api.Teams", { url: '/Teams', templateUrl: '/Angular/Views/Teams.html', controller: "TeamsController" })
-							.state("Api.Team", { url: '/Teams/:id?', templateUrl: '/Angular/Views/Team.html', controller: "TeamController" });
+							.state("Api.Team", { url: '/Teams/:id?', templateUrl: '/Angular/Views/Team.html', controller: "TeamController" })
+							.state("Api.Logos", { url: '/Logos', templateUrl: '/Angular/Views/Logos.html', controller: "LogosController" })
+							.state("Api.Logo", { url: '/Logos/:id?', templateUrl: '/Angular/Views/Logo.html', controller: "LogoController" })
+							.state("Api.Clubs", { url: '/Clubs', templateUrl: '/Angular/Views/Clubs.html', controller: "ClubsController" })
+							.state("Api.Club", { url: '/Clubs/:id?', templateUrl: '/Angular/Views/Club.html', controller: "ClubController" });
 					}]);
 		})();
 	</script>
