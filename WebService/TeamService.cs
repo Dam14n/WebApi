@@ -142,6 +142,12 @@ namespace WebService
 					.Where(m => m.Id == id)
 					.FirstOrDefault();
 				db.Entry(team).State = System.Data.EntityState.Deleted;
+
+				/*	foreach (Position position in team.Positions)
+					{
+						db.Entry(position).State = System.Data.EntityState.Deleted;
+					}*/
+
 				db.SaveChanges();
 			}
 		}

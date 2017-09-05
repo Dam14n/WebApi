@@ -14,10 +14,10 @@ namespace DTO
 		public string Name { get; set; }
 
 		[DataMember]
-		public int Latitude { get; set; }
+		public int? Latitude { get; set; }
 
 		[DataMember]
-		public int Longitude { get; set; }
+		public int? Longitude { get; set; }
 
 		[DataMember]
 		public List<int> TeamsIds { get; set; }

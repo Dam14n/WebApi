@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace Model
@@ -5,6 +6,7 @@ namespace Model
 	public class Date : IIdentificable
 	{
 		public virtual int Id { get; private set; }
+		public virtual DateTime DateMatch { get; set; }
 		public virtual int DateNumber { get; set; }
 		public virtual int CategoryId { get; set; }
 		public virtual Category Category { get; set; }

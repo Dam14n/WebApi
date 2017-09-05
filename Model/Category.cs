@@ -12,6 +12,7 @@ namespace Model
 		public virtual string Name { get; set; }
 		public virtual int SubDivisionId { get; set; }
 		public virtual SubDivision SubDivision { get; set; }
+		public virtual string url { get; set; }
 
 		private IList<Date> dates;
 
