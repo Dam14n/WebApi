@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 
 namespace Model
@@ -9,6 +10,8 @@ namespace Model
 		}
 
 		public virtual int Id { get; private set; }
+
+		public virtual DateTime DateMatch { get; set; }
 
 		public virtual int DateId { get; set; }
 		public virtual Date Date { get; set; }

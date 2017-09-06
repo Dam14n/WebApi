@@ -12,7 +12,7 @@ namespace WebService
 		{
 			using (var db = new ModelContext())
 			{
-				List<SubDivision> subDivisions = db.SubDivisions.ToList();
+				List<SubDivision> subDivisions = db.SubDivisions.OrderBy(m => m.Name).ToList();
 				List<SubDivisionDTO> dtos = new List<SubDivisionDTO>();
 
 				foreach (var subDivision in subDivisions)
@@ -40,7 +40,7 @@ namespace WebService
 		{
 			using (var db = new ModelContext())
 			{
-				List<SubDivision> subDivisions = db.SubDivisions.Where(m => m.DivisionId == divisionId).ToList();
+				List<SubDivision> subDivisions = db.SubDivisions.Where(m => m.DivisionId == divisionId).OrderBy(m => m.Name).ToList();
 				List<SubDivisionDTO> dtos = new List<SubDivisionDTO>();
 
 				foreach (var subDivision in subDivisions)
@@ -62,7 +62,7 @@ namespace WebService
 		{
 			using (var db = new ModelContext())
 			{
-				List<SubDivision> subDivisions = db.SubDivisions.Where(m => m.DivisionId == divisionId && m.Id == id).ToList();
+				List<SubDivision> subDivisions = db.SubDivisions.Where(m => m.DivisionId == divisionId && m.Id == id).OrderBy(m => m.Name).ToList();
 				List<SubDivisionDTO> dtos = new List<SubDivisionDTO>();
 
 				foreach (var subDivision in subDivisions)

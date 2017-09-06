@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace Model
 {
@@ -17,15 +16,6 @@ namespace Model
 		{
 			get { return this.positions ?? (this.positions = new List<Position>()); }
 			protected set { this.positions = value; }
-		}
-
-		public void orderPositions()
-		{
-			List<Position> orderedPositions = Positions.OrderByDescending(m => m.Points).ToList();
-			foreach (Position position in orderedPositions)
-			{
-				position.Rank = orderedPositions.IndexOf(position) + 1;
-			}
 		}
 	}
 }

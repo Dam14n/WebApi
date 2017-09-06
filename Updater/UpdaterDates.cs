@@ -9,7 +9,7 @@ using Model;
 
 namespace Updater
 {
-	public class Updater
+	public class UpdaterDates
 	{
 		public void startUpdate()
 		{
@@ -68,9 +68,7 @@ namespace Updater
 					}
 					else
 					{
-						DateTime myDate = DateTime.ParseExact(fecha[1], "dd-MM-yyyy",
-											System.Globalization.CultureInfo.InvariantCulture);
-						Date date = db.Dates.Where(m => m.DateMatch == myDate && m.CategoryId == category.Id).FirstOrDefault();
+						Date date = db.Dates.Where(m => m.DateNumber == dateNumber && m.CategoryId == category.Id).FirstOrDefault();
 						if (date == null)
 						{
 							createDate(db, fecha, category, dateNumber);
@@ -89,7 +87,10 @@ namespace Updater
 			Team localTeam = getTeamOrCreate(db, fecha[2]);
 			Team enemyTeam = getTeamOrCreate(db, fecha[5]);
 
-			Match match = getMatchOrCreate(db, date, localTeam, enemyTeam);
+			DateTime myDate = DateTime.ParseExact(fecha[1], "dd-MM-yyyy",
+					System.Globalization.CultureInfo.InvariantCulture);
+
+			Match match = getMatchOrCreate(db, date, localTeam, enemyTeam, myDate);
 
 			if (match.Id == 0)
 			{
@@ -154,12 +155,12 @@ namespace Updater
 			Date date = db.Dates.Create();
 			date.DateNumber = dateNumber;
 			date.CategoryId = category.Id;
-			date.DateMatch = myDate;
+			//date.DateMatch = myDate;
 
 			Team localTeam = getTeamOrCreate(db, fecha[2]);
 			Team enemyTeam = getTeamOrCreate(db, fecha[5]);
 
-			Match match = getMatchOrCreate(db, date, localTeam, enemyTeam);
+			Match match = getMatchOrCreate(db, date, localTeam, enemyTeam, myDate);
 
 			db.Matchs.Add(match);
 			db.Dates.Add(date);
@@ -178,9 +179,9 @@ namespace Updater
 			db.SaveChanges();
 		}
 
-		private Match getMatchOrCreate(ModelContext db, Date date, Team localTeam, Team enemyTeam)
+		private Match getMatchOrCreate(ModelContext db, Date date, Team localTeam, Team enemyTeam, DateTime dateMatch)
 		{
-			Match match = db.Matchs.Where(m => m.DateId == date.Id && m.LocalTeamId == localTeam.Id && m.EnemyTeamId == enemyTeam.Id).FirstOrDefault();
+			Match match = db.Matchs.Where(m => m.DateId == date.Id && m.LocalTeamId == localTeam.Id && m.EnemyTeamId == enemyTeam.Id && m.DateMatch == dateMatch).FirstOrDefault();
 
 			if (match == null)
 			{
@@ -188,6 +189,7 @@ namespace Updater
 				match.Date = date;
 				match.EnemyTeam = enemyTeam;
 				match.LocalTeam = localTeam;
+				match.DateMatch = dateMatch;
 			}
 
 			return match;

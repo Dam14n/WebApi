@@ -4,8 +4,10 @@
 	{
 		private static void Main(string[] args)
 		{
-			Updater updater = new Updater();
-			updater.startUpdate();
+			UpdaterDates upDates = new UpdaterDates();
+			upDates.startUpdate();
+			UpdaterPositions upPositions = new UpdaterPositions();
+			upPositions.startUpdate();
 		}
 	}
 }

@@ -224,7 +224,6 @@
     <Content Include="Angular\Views\Categories.html" />
     <Content Include="Angular\Views\Clubs.html" />
     <Content Include="Angular\Views\Club.html" />
-    <Content Include="Angular\Views\test.html" />
     <Content Include="Angular\Views\Logo.html" />
     <Content Include="Angular\Views\Logos.html" />
     <Content Include="Angular\Views\Team.html" />
