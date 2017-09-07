@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Model
 {
@@ -6,6 +7,9 @@ namespace Model
 	{
 		public virtual int Id { get; private set; }
 		public virtual string Name { get; set; }
+
+		public virtual DateTime startDate { get; set; }
+		public virtual DateTime endDate { get; set; }
 
 		public virtual int CategoryId { get; set; }
 		public virtual Category Category { get; set; }

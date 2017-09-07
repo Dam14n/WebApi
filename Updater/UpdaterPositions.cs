@@ -51,11 +51,21 @@ namespace Updater
 		private Board getBoardOrCreate(ModelContext db, Category category)
 		{
 			Board board = db.Boards.Where(m => m.CategoryId == category.Id).FirstOrDefault();
+			DateTime startDate = db.Matchs
+				.Where(m => db.Dates.Any(n => (n.CategoryId == category.Id) && (n.Id == m.DateId)))
+				.Select(m => m.DateMatch)
+				.Min();
+			DateTime endDate = db.Matchs
+				.Where(m => db.Dates.Any(n => (n.CategoryId == category.Id) && (n.Id == m.DateId)))
+				.Select(m => m.DateMatch)
+				.Max();
 			if (board == null)
 			{
 				board = db.Boards.Create();
 				board.Category = category;
 				board.Name = category.Name;
+				board.startDate = startDate;
+				board.endDate = endDate;
 			}
 			return board;
 		}
