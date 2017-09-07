@@ -59,7 +59,7 @@ namespace WebService
 				Club Club = db.Clubs
 					.Where(m => m.Id == id)
 					.FirstOrDefault();
-				db.Entry(Club).State = System.Data.EntityState.Deleted;
+				db.Entry(Club).State = System.Data.Entity.EntityState.Deleted;
 				db.SaveChanges();
 			}
 		}

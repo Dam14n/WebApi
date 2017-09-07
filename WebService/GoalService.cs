@@ -194,7 +194,7 @@ namespace WebService
 				Goal goal = db.Goals
 					.Where(m => m.Id == id)
 					.FirstOrDefault();
-				db.Entry(goal).State = System.Data.EntityState.Deleted;
+				db.Entry(goal).State = System.Data.Entity.EntityState.Deleted;
 				db.SaveChanges();
 			}
 		}

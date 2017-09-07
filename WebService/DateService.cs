@@ -99,7 +99,7 @@ namespace WebService
 				Date date = db.Dates
 					.Where(m => m.Id == id)
 					.FirstOrDefault();
-				db.Entry(date).State = System.Data.EntityState.Deleted;
+				db.Entry(date).State = System.Data.Entity.EntityState.Deleted;
 				db.SaveChanges();
 			}
 		}

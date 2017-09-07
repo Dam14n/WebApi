@@ -99,7 +99,7 @@ namespace WebService
 				Category category = db.Categorys
 					.Where(m => m.Id == id)
 					.FirstOrDefault();
-				db.Entry(category).State = System.Data.EntityState.Deleted;
+				db.Entry(category).State = System.Data.Entity.EntityState.Deleted;
 				db.SaveChanges();
 			}
 		}

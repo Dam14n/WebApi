@@ -113,7 +113,7 @@ namespace Updater
 
 				if (localGoals.Count != match.GetGoalsAgainst(enemyTeam.Id))
 				{
-					db.Goals.Where(m => m.MatchId == match.Id && m.TeamId == localTeam.Id).ToList().ForEach(goal => { db.Entry(goal).State = System.Data.EntityState.Deleted; });
+					db.Goals.Where(m => m.MatchId == match.Id && m.TeamId == localTeam.Id).ToList().ForEach(goal => { db.Entry(goal).State = System.Data.Entity.EntityState.Deleted; });
 					int n;
 					if (int.TryParse(fecha[3], out n))
 					{
@@ -125,7 +125,7 @@ namespace Updater
 
 				if (enemyGoals.Count != match.GetGoalsAgainst(localTeam.Id))
 				{
-					db.Goals.Where(m => m.MatchId == match.Id && m.TeamId == enemyTeam.Id).ToList().ForEach(goal => { db.Entry(goal).State = System.Data.EntityState.Deleted; });
+					db.Goals.Where(m => m.MatchId == match.Id && m.TeamId == enemyTeam.Id).ToList().ForEach(goal => { db.Entry(goal).State = System.Data.Entity.EntityState.Deleted; });
 					int l;
 					if (int.TryParse(fecha[4], out l))
 					{

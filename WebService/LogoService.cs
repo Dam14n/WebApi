@@ -60,7 +60,7 @@ namespace WebService
 				Logo Logo = db.Logos
 					.Where(m => m.Id == id)
 					.FirstOrDefault();
-				db.Entry(Logo).State = System.Data.EntityState.Deleted;
+				db.Entry(Logo).State = System.Data.Entity.EntityState.Deleted;
 				db.SaveChanges();
 			}
 		}

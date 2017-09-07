@@ -118,7 +118,7 @@ namespace WebService
 				Match match = db.Matchs
 					.Where(m => m.Id == id)
 					.FirstOrDefault();
-				db.Entry(match).State = System.Data.EntityState.Deleted;
+				db.Entry(match).State = System.Data.Entity.EntityState.Deleted;
 				db.SaveChanges();
 			}
 		}

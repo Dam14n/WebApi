@@ -53,7 +53,7 @@ namespace WebService
 				Division division = db.Divisions
 					.Where(m => m.Id == id)
 					.FirstOrDefault();
-				db.Entry(division).State = System.Data.EntityState.Deleted;
+				db.Entry(division).State = System.Data.Entity.EntityState.Deleted;
 				db.SaveChanges();
 			}
 		}

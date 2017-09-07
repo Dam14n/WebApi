@@ -103,7 +103,7 @@ namespace WebService
 				Player player = db.Players
 					.Where(m => m.Id == id)
 					.FirstOrDefault();
-				db.Entry(player).State = System.Data.EntityState.Deleted;
+				db.Entry(player).State = System.Data.Entity.EntityState.Deleted;
 				db.SaveChanges();
 			}
 		}

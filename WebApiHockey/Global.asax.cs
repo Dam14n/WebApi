@@ -1,10 +1,7 @@
-﻿using System.Data.Entity;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using DataLayer;
-using DataLayer.Migrations;
 
 namespace WebApiHockey
 {
@@ -23,7 +20,7 @@ namespace WebApiHockey
 			RouteConfig.RegisterRoutes(RouteTable.Routes);
 			BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-			Database.SetInitializer(new MigrateDatabaseToLatestVersion<ModelContext, Configuration>());
+			//Database.SetInitializer(new MigrateDatabaseToLatestVersion<ModelContext, Configuration>());
 			//Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ModelContext>());
 			//Database.SetInitializer(new CreateDatabaseIfNotExists<ModelContext>());
 		}
