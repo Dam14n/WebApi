@@ -22,6 +22,8 @@ namespace Model
 		public virtual int? EnemyTeamId { get; set; }
 		public virtual Team EnemyTeam { get; set; }
 
+		public virtual bool Played { get; set; }
+
 		public MatchResult GetResult(int teamId)
 		{
 			var result = MatchResult.LOSE;

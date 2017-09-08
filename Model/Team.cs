@@ -60,14 +60,14 @@ namespace Model
 			DateTime today = DateTime.Today;
 			foreach (Match match in localMatches)
 			{
-				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.WIN)
+				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.WIN && match.Played == true)
 				{
 					winMatches += 1;
 				}
 			}
 			foreach (Match match in awayMatches)
 			{
-				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.WIN)
+				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.WIN && match.Played == true)
 				{
 					winMatches += 1;
 				}
@@ -81,14 +81,14 @@ namespace Model
 			DateTime today = DateTime.Today;
 			foreach (Match match in localMatches)
 			{
-				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.TIE)
+				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.TIE && match.Played == true)
 				{
 					tieMatches += 1;
 				}
 			}
 			foreach (Match match in awayMatches)
 			{
-				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.TIE)
+				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.TIE && match.Played == true)
 				{
 					tieMatches += 1;
 				}
@@ -102,14 +102,14 @@ namespace Model
 			DateTime today = DateTime.Today;
 			foreach (Match match in localMatches)
 			{
-				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.LOSE)
+				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.LOSE && match.Played == true)
 				{
 					loseMatches += 1;
 				}
 			}
 			foreach (Match match in awayMatches)
 			{
-				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.LOSE)
+				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.LOSE && match.Played == true)
 				{
 					loseMatches += 1;
 				}

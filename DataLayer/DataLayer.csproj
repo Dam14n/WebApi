@@ -58,6 +58,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201709080100347_Initial.cs" />
+    <Compile Include="Migrations\201709080100347_Initial.Designer.cs">
+      <DependentUpon>201709080100347_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709080101250_UpdateMatch.cs" />
+    <Compile Include="Migrations\201709080101250_UpdateMatch.Designer.cs">
+      <DependentUpon>201709080101250_UpdateMatch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +79,14 @@
       <Project>{b086587b-9f2f-43cf-b294-a0aa45522d57}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709080100347_Initial.resx">
+      <DependentUpon>201709080100347_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709080101250_UpdateMatch.resx">
+      <DependentUpon>201709080101250_UpdateMatch.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

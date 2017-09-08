@@ -42,7 +42,7 @@
 			}
 			else
 			{
-				return (this.Team.LocalMatches.Count + this.Team.AwayMatches.Count);
+				return (this.GetLoseMatches() + this.GetTieMatches() + this.GetWinMatches());
 			}
 		}
 

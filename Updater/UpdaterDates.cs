@@ -94,15 +94,18 @@ namespace Updater
 
 			if (match.Id == 0)
 			{
+				match.Played = false;
 				int n;
 				if (int.TryParse(fecha[3], out n))
 				{
 					insertGoals(db, match, localTeam, Int32.Parse(fecha[3]));
+					match.Played = true;
 				}
 				int l;
 				if (int.TryParse(fecha[4], out l))
 				{
 					insertGoals(db, match, enemyTeam, Int32.Parse(fecha[4]));
+					match.Played = true;
 				}
 
 				db.Matchs.Add(match);
@@ -110,13 +113,14 @@ namespace Updater
 			else
 			{
 				List<Goal> localGoals = db.Goals.Where(m => m.MatchId == match.Id && m.TeamId == localTeam.Id).ToList();
-
+				match.Played = false;
 				if (localGoals.Count != match.GetGoalsAgainst(enemyTeam.Id))
 				{
 					db.Goals.Where(m => m.MatchId == match.Id && m.TeamId == localTeam.Id).ToList().ForEach(goal => { db.Entry(goal).State = System.Data.Entity.EntityState.Deleted; });
 					int n;
 					if (int.TryParse(fecha[3], out n))
 					{
+						match.Played = true;
 						insertGoals(db, match, localTeam, Int32.Parse(fecha[3]));
 					}
 				}
@@ -129,6 +133,7 @@ namespace Updater
 					int l;
 					if (int.TryParse(fecha[4], out l))
 					{
+						match.Played = true;
 						insertGoals(db, match, enemyTeam, Int32.Parse(fecha[4]));
 					}
 				}
@@ -162,19 +167,22 @@ namespace Updater
 
 			Match match = getMatchOrCreate(db, date, localTeam, enemyTeam, myDate);
 
-			db.Matchs.Add(match);
-			db.Dates.Add(date);
-
+			match.Played = false;
 			int n;
 			if (int.TryParse(fecha[3], out n))
 			{
 				insertGoals(db, match, localTeam, Int32.Parse(fecha[3]));
+				match.Played = true;
 			}
 			int l;
 			if (int.TryParse(fecha[4], out l))
 			{
 				insertGoals(db, match, enemyTeam, Int32.Parse(fecha[4]));
+				match.Played = true;
 			}
+
+			db.Matchs.Add(match);
+			db.Dates.Add(date);
 
 			db.SaveChanges();
 		}
