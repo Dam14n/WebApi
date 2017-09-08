@@ -41,8 +41,10 @@ namespace Updater
 					}
 
 					orderPositions(db, board);
-
-					db.Boards.Add(board);
+					if (board.Id == 0)
+					{
+						db.Boards.Add(board);
+					}
 				}
 				db.SaveChanges();
 			}
