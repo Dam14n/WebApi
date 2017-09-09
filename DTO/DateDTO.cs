@@ -18,5 +18,8 @@ namespace DTO
 
 		[DataMember]
 		public int DateNumber { get; set; }
+
+		[DataMember]
+		public bool CurrentDate { get; set; }
 	}
 }

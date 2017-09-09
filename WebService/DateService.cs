@@ -24,6 +24,7 @@ namespace WebService
 					dto.MatchesIds = date.Matches
 						.Select(m => m.Id)
 						.ToList();
+					dto.CurrentDate = date.CurrentDate;
 					dtos.Add(dto);
 				}
 				return dtos;
@@ -52,6 +53,7 @@ namespace WebService
 					dto.MatchesIds = date.Matches
 						.Select(m => m.Id)
 						.ToList();
+					dto.CurrentDate = date.CurrentDate;
 					dtos.Add(dto);
 				}
 				return dtos;
@@ -74,6 +76,7 @@ namespace WebService
 					dto.MatchesIds = date.Matches
 						.Select(m => m.Id)
 						.ToList();
+					dto.CurrentDate = date.CurrentDate;
 					dtos.Add(dto);
 				}
 				return dtos.FirstOrDefault();
