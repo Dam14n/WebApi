@@ -66,6 +66,10 @@
     <Compile Include="Migrations\201709080101250_UpdateMatch.Designer.cs">
       <DependentUpon>201709080101250_UpdateMatch.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709081826351_addedCurrentDate.cs" />
+    <Compile Include="Migrations\201709081826351_addedCurrentDate.Designer.cs">
+      <DependentUpon>201709081826351_addedCurrentDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709080101250_UpdateMatch.resx">
       <DependentUpon>201709080101250_UpdateMatch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709081826351_addedCurrentDate.resx">
+      <DependentUpon>201709081826351_addedCurrentDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

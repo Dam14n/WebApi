@@ -8,6 +8,7 @@ namespace Model
 		public virtual int DateNumber { get; set; }
 		public virtual int CategoryId { get; set; }
 		public virtual Category Category { get; set; }
+		public virtual bool CurrentDate { get; set; }
 
 		private IList<Match> matches;
 

@@ -32,12 +32,13 @@ namespace Updater
 							.Contains(m.Id))
 						.ToList();
 
-					foreach (var team in teams)
+					if (board.Id == 0)
 					{
-						Position position = db.Positions.Create();
-						position.Team = team;
-						team.Positions.Add(position);
-						board.Positions.Add(position);
+						createPositions(db, board, teams);
+					}
+					else
+					{
+						updatePositions(db, board, teams);
 					}
 
 					orderPositions(db, board);
@@ -47,6 +48,25 @@ namespace Updater
 					}
 				}
 				db.SaveChanges();
+			}
+		}
+
+		private void updatePositions(ModelContext db, Board board, List<Team> teams)
+		{
+			foreach (var position in board.Positions)
+			{
+				db.Entry(position).State = EntityState.Modified;
+			}
+		}
+
+		private void createPositions(ModelContext db, Board board, List<Team> teams)
+		{
+			foreach (var team in teams)
+			{
+				Position position = db.Positions.Create();
+				position.Team = team;
+				team.Positions.Add(position);
+				board.Positions.Add(position);
 			}
 		}
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Model;
 
@@ -24,5 +25,11 @@ namespace DTO
 
 		[DataMember]
 		public int Id { get; set; }
+
+		[DataMember]
+		public bool Played { get; set; }
+
+		[DataMember]
+		public DateTime DateMatch { get; set; }
 	}
 }

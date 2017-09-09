@@ -92,6 +92,7 @@ namespace Updater
 
 			Match match = getMatchOrCreate(db, date, localTeam, enemyTeam, myDate);
 
+			date.CurrentDate = isCurrentDate(match);
 			if (match.Id == 0)
 			{
 				match.Played = false;
@@ -113,9 +114,10 @@ namespace Updater
 			else
 			{
 				List<Goal> localGoals = db.Goals.Where(m => m.MatchId == match.Id && m.TeamId == localTeam.Id).ToList();
-				match.Played = false;
+				
 				if (localGoals.Count != match.GetGoalsAgainst(enemyTeam.Id))
 				{
+					match.Played = false;
 					db.Goals.Where(m => m.MatchId == match.Id && m.TeamId == localTeam.Id).ToList().ForEach(goal => { db.Entry(goal).State = System.Data.Entity.EntityState.Deleted; });
 					int n;
 					if (int.TryParse(fecha[3], out n))
@@ -129,6 +131,7 @@ namespace Updater
 
 				if (enemyGoals.Count != match.GetGoalsAgainst(localTeam.Id))
 				{
+					match.Played = false;
 					db.Goals.Where(m => m.MatchId == match.Id && m.TeamId == enemyTeam.Id).ToList().ForEach(goal => { db.Entry(goal).State = System.Data.Entity.EntityState.Deleted; });
 					int l;
 					if (int.TryParse(fecha[4], out l))
@@ -166,7 +169,7 @@ namespace Updater
 			Team enemyTeam = getTeamOrCreate(db, fecha[5]);
 
 			Match match = getMatchOrCreate(db, date, localTeam, enemyTeam, myDate);
-
+			date.CurrentDate = isCurrentDate(match);
 			match.Played = false;
 			int n;
 			if (int.TryParse(fecha[3], out n))
@@ -185,6 +188,14 @@ namespace Updater
 			db.Dates.Add(date);
 
 			db.SaveChanges();
+		}
+
+		private bool isCurrentDate(Match match)
+		{
+			DateTime today = DateTime.Today;
+			DateTime dateMatch = match.DateMatch;
+			DateTime rangeDate = today.AddDays(6);
+			return (dateMatch >= today) && (dateMatch <= rangeDate);
 		}
 
 		private Match getMatchOrCreate(ModelContext db, Date date, Team localTeam, Team enemyTeam, DateTime dateMatch)

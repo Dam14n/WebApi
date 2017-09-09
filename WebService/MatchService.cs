@@ -30,6 +30,8 @@ namespace WebService
 						.Where(m => m.MatchId == match.Id && m.TeamId == match.LocalTeamId)
 						.Select(m => m.Id)
 						.ToList();
+					dto.Played = match.Played;
+					dto.DateMatch = match.DateMatch;
 					dtos.Add(dto);
 				}
 				return dtos;
@@ -64,6 +66,8 @@ namespace WebService
 						.Where(m => m.MatchId == match.Id && m.TeamId == match.LocalTeamId)
 						.Select(m => m.Id)
 						.ToList();
+					dto.Played = match.Played;
+					dto.DateMatch = match.DateMatch;
 					dtos.Add(dto);
 				}
 				return dtos;
@@ -92,6 +96,8 @@ namespace WebService
 						.Where(m => m.MatchId == match.Id && m.TeamId == match.LocalTeamId)
 						.Select(m => m.Id)
 						.ToList();
+					dto.Played = match.Played;
+					dto.DateMatch = match.DateMatch;
 					dtos.Add(dto);
 				}
 				return dtos.FirstOrDefault();
