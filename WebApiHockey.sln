@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "WebService\WebService.csproj", "{77C25F28-DC9B-434B-92EA-A94D52279935}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Updater", "Updater\Updater.csproj", "{E4C035D8-0688-49E5-BE71-FFCF8DE8E923}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{77C25F28-DC9B-434B-92EA-A94D52279935}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77C25F28-DC9B-434B-92EA-A94D52279935}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77C25F28-DC9B-434B-92EA-A94D52279935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4C035D8-0688-49E5-BE71-FFCF8DE8E923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4C035D8-0688-49E5-BE71-FFCF8DE8E923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4C035D8-0688-49E5-BE71-FFCF8DE8E923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4C035D8-0688-49E5-BE71-FFCF8DE8E923}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

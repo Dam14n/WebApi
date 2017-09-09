@@ -44,7 +44,7 @@ namespace DataLayer
 				.HasMany<Board>(c => c.Boards)
 				.WithRequired(x => x.Category)
 				.HasForeignKey(y => y.CategoryId)
-				.WillCascadeOnDelete(false);
+				.WillCascadeOnDelete();
 
 			modelBuilder.Entity<Goal>()
 				.HasRequired(c => c.Team)
@@ -56,7 +56,7 @@ namespace DataLayer
 			   .HasRequired<Team>(c => c.Team)
 			   .WithMany(p => p.Positions)
 			   .HasForeignKey(c => c.TeamId)
-			   .WillCascadeOnDelete(false);
+			   .WillCascadeOnDelete();
 
 			modelBuilder.Entity<Club>()
 				.HasMany(t => t.Teams)

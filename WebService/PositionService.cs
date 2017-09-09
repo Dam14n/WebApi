@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using DataLayer;
@@ -46,6 +47,16 @@ namespace WebService
 		public List<PositionDTO> GetPositionsByBoard(int boardId)
 		{
 			return this.GetAll().Where(m => m.BoardId == boardId).ToList();
+		}
+
+		public List<PositionDTO> GetPositionsByCategory(int categoryId)
+		{
+			DateTime today = DateTime.Today;
+			using (var db = new ModelContext())
+			{
+				Board board = db.Boards.Where(m => m.CategoryId == categoryId && (m.startDate <= today && m.endDate >= today)).FirstOrDefault();
+				return this.GetPositionsByBoard(board.Id);
+			}
 		}
 	}
 }

@@ -12,7 +12,7 @@ namespace WebService
 		{
 			using (var db = new ModelContext())
 			{
-				List<Division> divisions = db.Divisions.ToList();
+				List<Division> divisions = db.Divisions.OrderBy(m => m.Name).ToList();
 				List<DivisionDTO> dtos = new List<DivisionDTO>();
 
 				foreach (var division in divisions)

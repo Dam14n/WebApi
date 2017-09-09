@@ -1,5 +1,6 @@
 namespace Model
 {
+	using System;
 	using System.Collections.Generic;
 
 	public class Team : IIdentificable
@@ -56,16 +57,17 @@ namespace Model
 		public int GetWinMatches()
 		{
 			int winMatches = 0;
+			DateTime today = DateTime.Today;
 			foreach (Match match in localMatches)
 			{
-				if (match.GetResult(this.Id) == MatchResult.WIN)
+				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.WIN)
 				{
 					winMatches += 1;
 				}
 			}
 			foreach (Match match in awayMatches)
 			{
-				if (match.GetResult(this.Id) == MatchResult.WIN)
+				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.WIN)
 				{
 					winMatches += 1;
 				}
@@ -76,16 +78,17 @@ namespace Model
 		public int GetTieMatches()
 		{
 			int tieMatches = 0;
+			DateTime today = DateTime.Today;
 			foreach (Match match in localMatches)
 			{
-				if (match.GetResult(this.Id) == MatchResult.TIE)
+				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.TIE)
 				{
 					tieMatches += 1;
 				}
 			}
 			foreach (Match match in awayMatches)
 			{
-				if (match.GetResult(this.Id) == MatchResult.TIE)
+				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.TIE)
 				{
 					tieMatches += 1;
 				}
@@ -96,16 +99,17 @@ namespace Model
 		public int GetLoseMatches()
 		{
 			int loseMatches = 0;
+			DateTime today = DateTime.Today;
 			foreach (Match match in localMatches)
 			{
-				if (match.GetResult(this.Id) == MatchResult.LOSE)
+				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.LOSE)
 				{
 					loseMatches += 1;
 				}
 			}
 			foreach (Match match in awayMatches)
 			{
-				if (match.GetResult(this.Id) == MatchResult.LOSE)
+				if (match.DateMatch <= today && match.GetResult(this.Id) == MatchResult.LOSE)
 				{
 					loseMatches += 1;
 				}
@@ -117,6 +121,10 @@ namespace Model
 		{
 			int againstGoals = 0;
 			foreach (Match match in awayMatches)
+			{
+				againstGoals += match.GetGoalsAgainst(this.Id);
+			}
+			foreach (Match match in localMatches)
 			{
 				againstGoals += match.GetGoalsAgainst(this.Id);
 			}

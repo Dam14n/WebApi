@@ -27,12 +27,5 @@ namespace WebApiHockey.Http
 		{
 			return boardService.GetBoardsByCategory(categoryId);
 		}
-
-		[Route("addpositions")]
-		[HttpPost]
-		public void Positions()
-		{
-			boardService.AddPositions();
-		}
 	}
 }

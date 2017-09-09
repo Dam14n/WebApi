@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using DataLayer;
 using DTO;
@@ -9,27 +8,6 @@ namespace WebService
 {
 	public class BoardService
 	{
-		public void AddPositions()
-		{
-			using (var db = new ModelContext())
-			{
-				Board board = db.Boards.Where(m => m.Id == 3).FirstOrDefault();
-				List<Team> teams = db.Teams.Include(m => m.AwayMatches).Include(m => m.LocalMatches).ToList();
-
-				foreach (var team in teams)
-				{
-					Position position = db.Positions.Create();
-					position.Team = team;
-					team.Positions.Add(position);
-					board.Positions.Add(position);
-				}
-
-				board.orderPositions();
-
-				db.SaveChanges();
-			}
-		}
-
 		public List<BoardDTO> GetAll()
 		{
 			using (var db = new ModelContext())
