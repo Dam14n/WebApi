@@ -20,8 +20,21 @@ namespace WebService
 					MatchDTO dto = new MatchDTO();
 					dto.Id = match.Id;
 					dto.DateId = match.DateId;
+
 					dto.EnemyTeamId = match.EnemyTeamId ?? 0;
+					dto.EnemyTeamName = match.EnemyTeam.Name;
+					dto.EnemyTeamLogo = db.Logos
+						.Where(l => l.Id == match.EnemyTeam.Club.LogoId)
+						.Select(p => new LogoDTO { Id = p.Id, Height = p.Height, Image = p.Image, Name = p.Name, Size = p.Size, Type = p.Type, Width = p.Width })
+						.FirstOrDefault();
+
 					dto.LocalTeamId = match.LocalTeamId ?? 0;
+					dto.LocalTeamName = match.LocalTeam.Name;
+					dto.LocalTeamLogo = db.Logos
+						.Where(l => l.Id == match.LocalTeam.Club.LogoId)
+						.Select(p => new LogoDTO { Id = p.Id, Height = p.Height, Image = p.Image, Name = p.Name, Size = p.Size, Type = p.Type, Width = p.Width })
+						.FirstOrDefault();
+
 					dto.EnemyGoalsIds = match.EnemyTeam.Goals
 						.Where(m => m.MatchId == match.Id && m.TeamId == match.EnemyTeamId)
 						.Select(m => m.Id)
@@ -56,8 +69,21 @@ namespace WebService
 					MatchDTO dto = new MatchDTO();
 					dto.Id = match.Id;
 					dto.DateId = match.DateId;
+
 					dto.EnemyTeamId = match.EnemyTeamId ?? 0;
+					dto.EnemyTeamName = match.EnemyTeam.Name;
+					dto.EnemyTeamLogo = db.Logos
+						.Where(l => l.Id == match.EnemyTeam.Club.LogoId)
+						.Select(p => new LogoDTO { Id = p.Id, Height = p.Height, Image = p.Image, Name = p.Name, Size = p.Size, Type = p.Type, Width = p.Width })
+						.FirstOrDefault();
+
 					dto.LocalTeamId = match.LocalTeamId ?? 0;
+					dto.LocalTeamName = match.LocalTeam.Name;
+					dto.LocalTeamLogo = db.Logos
+						.Where(l => l.Id == match.LocalTeam.Club.LogoId)
+						.Select(p => new LogoDTO { Id = p.Id, Height = p.Height, Image = p.Image, Name = p.Name, Size = p.Size, Type = p.Type, Width = p.Width })
+						.FirstOrDefault();
+
 					dto.EnemyGoalsIds = match.EnemyTeam.Goals
 						.Where(m => m.MatchId == match.Id && m.TeamId == match.EnemyTeamId)
 						.Select(m => m.Id)
@@ -86,8 +112,21 @@ namespace WebService
 					MatchDTO dto = new MatchDTO();
 					dto.Id = match.Id;
 					dto.DateId = match.DateId;
+
 					dto.EnemyTeamId = match.EnemyTeamId ?? 0;
+					dto.EnemyTeamName = match.EnemyTeam.Name;
+					dto.EnemyTeamLogo = db.Logos
+						.Where(l => l.Id == match.EnemyTeam.Club.LogoId)
+						.Select(p => new LogoDTO { Id = p.Id, Height = p.Height, Image = p.Image, Name = p.Name, Size = p.Size, Type = p.Type, Width = p.Width })
+						.FirstOrDefault();
+
 					dto.LocalTeamId = match.LocalTeamId ?? 0;
+					dto.LocalTeamName = match.LocalTeam.Name;
+					dto.LocalTeamLogo = db.Logos
+						.Where(l => l.Id == match.LocalTeam.Club.LogoId)
+						.Select(p => new LogoDTO { Id = p.Id, Height = p.Height, Image = p.Image, Name = p.Name, Size = p.Size, Type = p.Type, Width = p.Width })
+						.FirstOrDefault();
+
 					dto.EnemyGoalsIds = match.EnemyTeam.Goals
 						.Where(m => m.MatchId == match.Id && m.TeamId == match.EnemyTeamId)
 						.Select(m => m.Id)

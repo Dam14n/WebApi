@@ -12,10 +12,22 @@ namespace DTO
 		public int DateId { get; set; }
 
 		[DataMember]
+		public string LocalTeamName { get; set; }
+
+		[DataMember]
 		public int LocalTeamId { get; set; }
 
 		[DataMember]
+		public LogoDTO LocalTeamLogo { get; set; }
+
+		[DataMember]
+		public string EnemyTeamName { get; set; }
+
+		[DataMember]
 		public int EnemyTeamId { get; set; }
+
+		[DataMember]
+		public LogoDTO EnemyTeamLogo { get; set; }
 
 		[DataMember]
 		public List<int> LocalGoalsIds { get; set; }
