@@ -33,7 +33,13 @@ namespace DTO
 		public List<int> LocalGoalsIds { get; set; }
 
 		[DataMember]
+		public int LocalGoals { get; set; }
+
+		[DataMember]
 		public List<int> EnemyGoalsIds { get; set; }
+
+		[DataMember]
+		public int EnemyGoals { get; set; }
 
 		[DataMember]
 		public int Id { get; set; }

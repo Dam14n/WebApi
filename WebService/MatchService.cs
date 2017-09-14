@@ -39,10 +39,16 @@ namespace WebService
 						.Where(m => m.MatchId == match.Id && m.TeamId == match.EnemyTeamId)
 						.Select(m => m.Id)
 						.ToList();
+					dto.EnemyGoals = match.EnemyTeam.Goals
+						.Count(m => m.MatchId == match.Id && m.TeamId == match.EnemyTeamId);
+
 					dto.LocalGoalsIds = match.LocalTeam.Goals
 						.Where(m => m.MatchId == match.Id && m.TeamId == match.LocalTeamId)
 						.Select(m => m.Id)
 						.ToList();
+					dto.LocalGoals = match.LocalTeam.Goals
+						.Count(m => m.MatchId == match.Id && m.TeamId == match.LocalTeamId);
+
 					dto.Played = match.Played;
 					dto.DateMatch = match.DateMatch;
 					dtos.Add(dto);
@@ -88,10 +94,16 @@ namespace WebService
 						.Where(m => m.MatchId == match.Id && m.TeamId == match.EnemyTeamId)
 						.Select(m => m.Id)
 						.ToList();
+					dto.EnemyGoals = match.EnemyTeam.Goals
+						.Count(m => m.MatchId == match.Id && m.TeamId == match.EnemyTeamId);
+
 					dto.LocalGoalsIds = match.LocalTeam.Goals
 						.Where(m => m.MatchId == match.Id && m.TeamId == match.LocalTeamId)
 						.Select(m => m.Id)
 						.ToList();
+					dto.LocalGoals = match.LocalTeam.Goals
+						.Count(m => m.MatchId == match.Id && m.TeamId == match.LocalTeamId);
+
 					dto.Played = match.Played;
 					dto.DateMatch = match.DateMatch;
 					dtos.Add(dto);
@@ -131,10 +143,16 @@ namespace WebService
 						.Where(m => m.MatchId == match.Id && m.TeamId == match.EnemyTeamId)
 						.Select(m => m.Id)
 						.ToList();
+					dto.EnemyGoals = match.EnemyTeam.Goals
+						.Count(m => m.MatchId == match.Id && m.TeamId == match.EnemyTeamId);
+
 					dto.LocalGoalsIds = match.LocalTeam.Goals
 						.Where(m => m.MatchId == match.Id && m.TeamId == match.LocalTeamId)
 						.Select(m => m.Id)
 						.ToList();
+					dto.LocalGoals = match.LocalTeam.Goals
+						.Count(m => m.MatchId == match.Id && m.TeamId == match.LocalTeamId);
+
 					dto.Played = match.Played;
 					dto.DateMatch = match.DateMatch;
 					dtos.Add(dto);
