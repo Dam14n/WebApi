@@ -32,6 +32,7 @@ namespace WebService
 					dto.TieMatches = position.TieMatches;
 					dto.WinMatches = position.WinMatches;
 					dto.Rank = position.Rank;
+					dto.TeamName = db.Teams.Where(t => t.Id == position.TeamId).Select(t => t.Name).FirstOrDefault();
 					dtos.Add(dto);
 				}
 				return dtos;

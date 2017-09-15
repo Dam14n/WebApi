@@ -13,6 +13,9 @@ namespace DTO
 		public int Rank { get; set; }
 
 		[DataMember]
+		public string TeamName { get; set; }
+
+		[DataMember]
 		public int TeamId { get; set; }
 
 		[DataMember]
