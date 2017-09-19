@@ -6,7 +6,7 @@
 
 		//get sample
 		var getCategories = function initialize() {
-			$http.get('/api/categories').then(function (response) {
+			$http.get('webapi/api/categories').then(function (response) {
 				$scope.listCategories = response.data;
 			});
 		}
@@ -14,7 +14,7 @@
 		getCategories();
 
 		$scope.deleteCategory = function deleteCategory(subdivision) {
-			$http.delete('/api/categories/delete/' + subdivision.Id).then(function (response) {
+			$http.delete('webapi/api/categories/delete/' + subdivision.Id).then(function (response) {
 				$state.reload();
 			});
 		};

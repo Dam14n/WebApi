@@ -6,7 +6,7 @@
 
 		//get sample
 		var getDates = function initialize() {
-			$http.get('/api/dates').then(function (response) {
+			$http.get('webapi/api/dates').then(function (response) {
 				$scope.listDates = response.data;
 			});
 		}
@@ -14,7 +14,7 @@
 		getDates();
 
 		$scope.deleteDate = function deleteDate(date) {
-			$http.delete('/api/dates/delete/' + date.Id).then(function (response) {
+			$http.delete('webapi/api/dates/delete/' + date.Id).then(function (response) {
 				$state.reload();
 			});
 		};

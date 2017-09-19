@@ -14,7 +14,7 @@
 
 			function initialize(goalId) {
 				var promises = goalId ? getGoal(goalId) : [];
-				$http.get('/api/matches').then(function (response) {
+				$http.get('webapi/api/matches').then(function (response) {
 					$scope.matches = response.data;
 				});
 				$scope.ready = true;
@@ -22,7 +22,7 @@
 
 			$scope.updateTeams = function (matchId) {
 				if (matchId != null) {
-					$http.get('/api/matches/' + $scope.goal.MatchId + '/teams').then(function (response) {
+					$http.get('webapi/api/matches/' + $scope.goal.MatchId + '/teams').then(function (response) {
 						$scope.teams = response.data;
 					});
 				}
@@ -31,18 +31,18 @@
 
 			$scope.updatePlayers = function (teamId) {
 				if (teamId != null) {
-					$http.get('/api/teams/' + $scope.goal.TeamId + '/players').then(function (response) {
+					$http.get('webapi/api/teams/' + $scope.goal.TeamId + '/players').then(function (response) {
 						$scope.players = response.data;
 					});
 				}
 			};
 
 			var getGoal = function getGoal(id) {
-				$http.get('/api/goals/' + id).then(function (response) {
+				$http.get('webapi/api/goals/' + id).then(function (response) {
 					$scope.goal = response.data;
-					$http.get('/api/matches/' + $scope.goal.MatchId + '/teams').then(function (response) {
+					$http.get('webapi/api/matches/' + $scope.goal.MatchId + '/teams').then(function (response) {
 						$scope.teams = response.data;
-						$http.get('/api/teams/' + $scope.goal.TeamId + '/players').then(function (response) {
+						$http.get('webapi/api/teams/' + $scope.goal.TeamId + '/players').then(function (response) {
 							$scope.players = response.data;
 						});
 					});
@@ -57,11 +57,11 @@
 				if ($scope.form.$valid) {
 					$scope.ready = false;
 					if ($stateParams.id != "") {
-						$http.put('/api/goals/' + entityMode, JSON.stringify($scope.goal)).then(function (response) {
+						$http.put('webapi/api/goals/' + entityMode, JSON.stringify($scope.goal)).then(function (response) {
 							$state.reload();
 						});
 					} else {
-						$http.post('/api/goals/' + entityMode, JSON.stringify($scope.goal)).then(function (response) {
+						$http.post('webapi/api/goals/' + entityMode, JSON.stringify($scope.goal)).then(function (response) {
 							$state.reload();
 						});
 					}

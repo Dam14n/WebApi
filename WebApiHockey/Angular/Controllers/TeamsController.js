@@ -6,7 +6,7 @@
 
 		//get sample
 		var getTeams = function getTeams() {
-			$http.get('/api/teams').then(function (response) {
+			$http.get('webapi/api/teams').then(function (response) {
 				$scope.listTeams = response.data;
 			});
 		}
@@ -14,7 +14,7 @@
 		getTeams();
 
 		$scope.deleteTeam = function deleteTeam(team) {
-			$http.delete('/api/teams/delete/' + team.Id).then(function (response) {
+			$http.delete('webapi/api/teams/delete/' + team.Id).then(function (response) {
 				$state.reload();
 			});
 		};

@@ -12,14 +12,14 @@
 
 			function initialize(categoryId) {
 				var promises = categoryId ? getCategory(categoryId) : [];
-				$http.get('/api/subdivisions').then(function (response) {
+				$http.get('webapi/api/subdivisions').then(function (response) {
 					$scope.subdivisions = response.data;
 				});
 				$scope.ready = true;
 			}
 
 			var getCategory = function getCategory(id) {
-				$http.get('/api/categories/' + id).then(function (response) {
+				$http.get('webapi/api/categories/' + id).then(function (response) {
 					$scope.category = response.data;
 				});
 			}
@@ -32,11 +32,11 @@
 				if ($scope.form.$valid) {
 					$scope.ready = false;
 					if ($stateParams.id != "") {
-						$http.put('/api/categories/' + entityMode, JSON.stringify($scope.category)).then(function (response) {
+						$http.put('webapi/api/categories/' + entityMode, JSON.stringify($scope.category)).then(function (response) {
 							$state.reload();
 						});
 					} else {
-						$http.post('/api/categories/' + entityMode, JSON.stringify($scope.category)).then(function (response) {
+						$http.post('webapi/api/categories/' + entityMode, JSON.stringify($scope.category)).then(function (response) {
 							$state.reload();
 						});
 					}

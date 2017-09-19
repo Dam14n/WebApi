@@ -5,14 +5,16 @@
 			<div class="row header green">
 				<div class="cell">Id</div>
 				<div class="cell">DateNumber</div>
-				<div class="cell">CategoryId</div>
+				<div class="cell">CategoryId</div>            
 				<div class="cell">MatchesIds</div>
+				<div class="cell">CurrentDate</div>
 			</div>
 			<div class="row" ng-repeat="date in listDates">
 				<div class="cell">{{date.Id}}</div>
 				<div class="cell">{{date.DateNumber}}</div>
 				<div class="cell">{{date.CategoryId}}</div>
 				<div class="cell">{{date.MatchesIds}}</div>
+				<div class="cell">{{date.CurrentDate}}</div>
 				<div class="cell">
 					<a class="btn btn-xsm btn-primary edit" ui-sref="^.Date({id: {{date.Id}}})"><span class="glyphicon glyphicon-edit"></span>EDITAR</a>
 					<a class="btn btn-xsm btn-danger delete" ng-click="deleteDate(date)" ui-sref="^.Dates"><span class="glyphicon glyphicon-remove-sign"></span>ELIMINAR</a>

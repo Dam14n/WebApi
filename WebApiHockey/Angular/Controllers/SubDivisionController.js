@@ -12,14 +12,14 @@
 
 			function initialize(subdivisionId) {
 				var promises = subdivisionId ? getSubDivision(subdivisionId) : [];
-				$http.get('/api/divisions').then(function (response) {
+				$http.get('webapi/api/divisions').then(function (response) {
 					$scope.divisions = response.data;
 				});
 				$scope.ready = true;
 			}
 
 			var getSubDivision = function getSubDivision(id) {
-				$http.get('/api/subdivisions/' + id).then(function (response) {
+				$http.get('webapi/api/subdivisions/' + id).then(function (response) {
 					$scope.subDivision = response.data;
 				});
 			}
@@ -32,11 +32,11 @@
 				if ($scope.form.$valid) {
 					$scope.ready = false;
 					if ($stateParams.id != ""){
-						$http.put('/api/subdivisions/' + entityMode, JSON.stringify($scope.subDivision)).then(function (response) {
+						$http.put('webapi/api/subdivisions/' + entityMode, JSON.stringify($scope.subDivision)).then(function (response) {
 							$state.reload();
 						});
 					}else{
-						$http.post('/api/subdivisions/' + entityMode, JSON.stringify($scope.subDivision)).then(function (response) {
+						$http.post('webapi/api/subdivisions/' + entityMode, JSON.stringify($scope.subDivision)).then(function (response) {
 							$state.reload();
 						});
 					}

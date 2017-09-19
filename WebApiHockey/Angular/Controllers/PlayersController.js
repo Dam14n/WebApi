@@ -6,7 +6,7 @@
 
 		//get sample
 		var getPlayers = function getPlayers() {
-			$http.get('/api/players').then(function (response) {
+			$http.get('webapi/api/players').then(function (response) {
 				$scope.listPlayers = response.data;
 			});
 		}
@@ -14,7 +14,7 @@
 		getPlayers();
 
 		$scope.deletePlayer = function deletePlayer(player) {
-			$http.delete('/api/players/delete/' + player.Id).then(function (response) {
+			$http.delete('webapi/api/players/delete/' + player.Id).then(function (response) {
 				$state.reload();
 			});
 		};

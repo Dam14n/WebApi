@@ -6,7 +6,7 @@
 
 		//get sample
 		var getClubs = function getClubs() {
-			$http.get('/api/clubs').then(function (response) {
+			$http.get('webapi/api/clubs').then(function (response) {
 				$scope.listClubs = response.data;
 			});
 		}
@@ -14,7 +14,7 @@
 		getClubs();
 
 		$scope.deleteClub = function deleteClub(club) {
-			$http.delete('/api/clubs/delete/' + club.Id).then(function (response) {
+			$http.delete('webapi/api/clubs/delete/' + club.Id).then(function (response) {
 				$state.reload();
 			});
 		};

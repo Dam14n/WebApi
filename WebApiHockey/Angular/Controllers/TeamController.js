@@ -16,19 +16,19 @@
 
 			function initialize(teamId) {
 				var promises = teamId ? getTeam(teamId) : [];
-				$http.get('/api/players').then(function (response) {
+				$http.get('webapi/api/players').then(function (response) {
 					$scope.players = response.data;
 				});
 				$scope.ready = true;
 			};
 
 			var getTeam = function getTeam(id) {
-				$http.get('/api/teams/' + id).then(function (response) {
+				$http.get('webapi/api/teams/' + id).then(function (response) {
 					$scope.team = response.data;
-					$http.get('/api/teams/' + $scope.team.Id + '/players').then(function (response) {
+					$http.get('webapi/api/teams/' + $scope.team.Id + '/players').then(function (response) {
 						$scope.playersTeam = response.data;
 					});
-					$http.get('/api/clubs').then(function (response) {
+					$http.get('webapi/api/clubs').then(function (response) {
 						$scope.clubs = response.data;
 						$scope.clubs.push({ Name: "SIN CLUB" });
 					});
@@ -43,12 +43,12 @@
 				if ($scope.form.$valid) {
 					$scope.ready = false;
 					if ($stateParams.id != "") {
-						$http.put('/api/teams/' + entityMode, JSON.stringify($scope.team)).then(function (response) {
+						$http.put('webapi/api/teams/' + entityMode, JSON.stringify($scope.team)).then(function (response) {
 							submitPlayers();
 							$state.reload();
 						});
 					} else {
-						$http.post('/api/teams/' + entityMode, JSON.stringify($scope.team)).then(function (response) {
+						$http.post('webapi/api/teams/' + entityMode, JSON.stringify($scope.team)).then(function (response) {
 							submitPlayers();
 							$state.reload();
 						});
@@ -64,13 +64,13 @@
 			var submitPlayers = function () {
 				angular.forEach($scope.newPlayerTeam, function (player) {
 					player.TeamId = $scope.team.Id;
-					$http.put('/api/players/put', JSON.stringify(player)).then(function (response) {
+					$http.put('webapi/api/players/put', JSON.stringify(player)).then(function (response) {
 						$state.reload();
 					});
 				})
 				angular.forEach(playersLeftTeam, function (player) {
 					player.TeamId = null;
-					$http.put('/api/players/put', JSON.stringify(player)).then(function (response) {
+					$http.put('webapi/api/players/put', JSON.stringify(player)).then(function (response) {
 						$state.reload();
 					});
 				})

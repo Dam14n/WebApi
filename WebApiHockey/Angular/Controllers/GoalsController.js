@@ -6,7 +6,7 @@
 
 		//get sample
 		var getGoals = function initialize() {
-			$http.get('/api/goals').then(function (response) {
+			$http.get('webapi/api/goals').then(function (response) {
 				$scope.listGoals = response.data;
 			});
 		}
@@ -14,7 +14,7 @@
 		getGoals();
 
 		$scope.deleteGoal = function deleteMatch(goal) {
-			$http.delete('/api/goals/delete/' + goal.Id).then(function (response) {
+			$http.delete('webapi/api/goals/delete/' + goal.Id).then(function (response) {
 				$state.reload();
 			});
 		};

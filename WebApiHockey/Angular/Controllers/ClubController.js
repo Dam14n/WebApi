@@ -13,14 +13,15 @@
 
 			function initialize(clubId) {
 				var promises = clubId ? getClub(clubId) : [];
-				$http.get('/api/logos').then(function (response) {
-					$scope.logos = response.data;
+				$http.get('webapi/api/logos').then(function (response) {
+				    $scope.logos = response.data;
+				    $scope.logos.push({ Name: "SIN LOGO" });
 				});
 				$scope.ready = true;
 			};
 
 			var getClub = function getClub(id) {
-				$http.get('/api/clubs/' + id).then(function (response) {
+			    $http.get('webapi/api/clubs/' + id).then(function (response) {
 					$scope.club = response.data;
 				});
 			}
@@ -34,11 +35,11 @@
 				if ($scope.form.$valid) {
 					$scope.ready = false;
 					if ($stateParams.id != "") {
-						$http.put('/api/clubs/' + entityMode, JSON.stringify($scope.club)).then(function (response) {
+					    $http.put('webapi/api/clubs/' + entityMode, JSON.stringify($scope.club)).then(function (response) {
 							$state.reload();
 						});
 					} else {
-						$http.post('/api/clubs/' + entityMode, JSON.stringify($scope.club)).then(function (response) {
+					    $http.post('webapi/api/clubs/' + entityMode, JSON.stringify($scope.club)).then(function (response) {
 							$state.reload();
 						});
 					}

@@ -6,7 +6,7 @@
 
 		//get sample
 		var getLogos = function initialize() {
-			$http.get('/api/logos').then(function (response) {
+			$http.get('webapi/api/logos').then(function (response) {
 				$scope.listLogos = response.data;
 			});
 		}
@@ -14,7 +14,7 @@
 		getLogos();
 
 		$scope.deleteLogo = function deleteLogo(logo) {
-			$http.delete('/api/logos/delete/' + logo.Id).then(function (response) {
+			$http.delete('webapi/api/logos/delete/' + logo.Id).then(function (response) {
 				$state.reload();
 			});
 		};

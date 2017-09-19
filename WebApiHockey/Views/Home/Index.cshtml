@@ -1,6 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <base href="/">
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width" />
 	<link href="~/Angular/Styles/estilos.css" rel="stylesheet" />
@@ -16,33 +17,34 @@
 			// sets routes configuration
 			app.config(["$stateProvider", "$urlRouterProvider", "$locationProvider",
 				function ($stateProvider, $urlRouterProvider, $locationProvider) {
-					$locationProvider.hashPrefix('');
-					$urlRouterProvider.otherwise('/Home');
+				    $locationProvider.hashPrefix('');
+				    $locationProvider.html5Mode(true);
+					$urlRouterProvider.otherwise('Home');
 
 					$stateProvider
 							// HOME STATES AND NESTED VIEWS ========================================
-							.state("Home", { url: '/Home', templateUrl: '/Angular/Views/Home.html' })
-							.state("Api", { url: '/Api', templateUrl: '/Angular/Views/Api.html' })
-							.state("Api.Divisions", { url: '/Divisions', templateUrl: '/Angular/Views/Divisions.html', controller: "DivisionsController" })
-							.state("Api.Division", { url: '/Divisions/:id?', templateUrl: '/Angular/Views/Division.html', controller: "DivisionController" })
-							.state("Api.SubDivisions", { url: '/SubDivisions', templateUrl: '/Angular/Views/SubDivisions.html', controller: "SubDivisionsController" })
-							.state("Api.SubDivision", { url: '/SubDivisions/:id?', templateUrl: '/Angular/Views/SubDivision.html', controller: "SubDivisionController" })
-							.state("Api.Categories", { url: '/Categories', templateUrl: '/Angular/Views/Categories.html', controller: "CategoriesController" })
-							.state("Api.Category", { url: '/Categories/:id?', templateUrl: '/Angular/Views/Category.html', controller: "CategoryController" })
-							.state("Api.Dates", { url: '/Dates', templateUrl: '/Angular/Views/Dates.html', controller: "DatesController" })
-							.state("Api.Date", { url: '/Dates/:id?', templateUrl: '/Angular/Views/Date.html', controller: "DateController" })
-							.state("Api.Matches", { url: '/Matches', templateUrl: '/Angular/Views/Matches.html', controller: "MatchesController" })
-							.state("Api.Match", { url: '/Matches/:id?', templateUrl: '/Angular/Views/Match.html', controller: "MatchController" })
-							.state("Api.Goals", { url: '/Goals', templateUrl: '/Angular/Views/Goals.html', controller: "GoalsController" })
-							.state("Api.Goal", { url: '/Goals/:id?', templateUrl: '/Angular/Views/Goal.html', controller: "GoalController" })
-							.state("Api.Players", { url: '/Players', templateUrl: '/Angular/Views/Players.html', controller: "PlayersController" })
-							.state("Api.Player", { url: '/Players/:id?', templateUrl: '/Angular/Views/Player.html', controller: "PlayerController" })
-							.state("Api.Teams", { url: '/Teams', templateUrl: '/Angular/Views/Teams.html', controller: "TeamsController" })
-							.state("Api.Team", { url: '/Teams/:id?', templateUrl: '/Angular/Views/Team.html', controller: "TeamController" })
-							.state("Api.Logos", { url: '/Logos', templateUrl: '/Angular/Views/Logos.html', controller: "LogosController" })
-							.state("Api.Logo", { url: '/Logos/:id?', templateUrl: '/Angular/Views/Logo.html', controller: "LogoController" })
-							.state("Api.Clubs", { url: '/Clubs', templateUrl: '/Angular/Views/Clubs.html', controller: "ClubsController" })
-							.state("Api.Club", { url: '/Clubs/:id?', templateUrl: '/Angular/Views/Club.html', controller: "ClubController" });
+							.state("Home", { url: '/Home', templateUrl: 'webapi/Angular/Views/Home.html' })
+							.state("Api", { url: '/Api', templateUrl: 'webapi/Angular//Views/Api.html' })
+							.state("Api.Divisions", { url: '/Divisions', templateUrl: 'webapi/Angular//Views/Divisions.html', controller: "DivisionsController" })
+							.state("Api.Division", { url: '/Divisions/:id?', templateUrl: 'webapi/Angular//Views/Division.html', controller: "DivisionController" })
+							.state("Api.SubDivisions", { url: '/SubDivisions', templateUrl: 'webapi/Angular//Views/SubDivisions.html', controller: "SubDivisionsController" })
+							.state("Api.SubDivision", { url: '/SubDivisions/:id?', templateUrl: 'webapi/Angular//Views/SubDivision.html', controller: "SubDivisionController" })
+							.state("Api.Categories", { url: '/Categories', templateUrl: 'webapi/Angular//Views/Categories.html', controller: "CategoriesController" })
+							.state("Api.Category", { url: '/Categories/:id?', templateUrl: 'webapi/Angular//Views/Category.html', controller: "CategoryController" })
+							.state("Api.Dates", { url: '/Dates', templateUrl: 'webapi/Angular//Views/Dates.html', controller: "DatesController" })
+							.state("Api.Date", { url: '/Dates/:id?', templateUrl: 'webapi/Angular//Views/Date.html', controller: "DateController" })
+							.state("Api.Matches", { url: '/Matches', templateUrl: 'webapi/Angular//Views/Matches.html', controller: "MatchesController" })
+							.state("Api.Match", { url: '/Matches/:id?', templateUrl: 'webapi/Angular//Views/Match.html', controller: "MatchController" })
+							.state("Api.Goals", { url: '/Goals', templateUrl: 'webapi/Angular//Views/Goals.html', controller: "GoalsController" })
+							.state("Api.Goal", { url: '/Goals/:id?', templateUrl: 'webapi/Angular//Views/Goal.html', controller: "GoalController" })
+							.state("Api.Players", { url: '/Players', templateUrl: 'webapi/Angular//Views/Players.html', controller: "PlayersController" })
+							.state("Api.Player", { url: '/Players/:id?', templateUrl: 'webapi/Angular//Views/Player.html', controller: "PlayerController" })
+							.state("Api.Teams", { url: '/Teams', templateUrl: 'webapi/Angular//Views/Teams.html', controller: "TeamsController" })
+							.state("Api.Team", { url: '/Teams/:id?', templateUrl: 'webapi/Angular//Views/Team.html', controller: "TeamController" })
+							.state("Api.Logos", { url: '/Logos', templateUrl: 'webapi/Angular//Views/Logos.html', controller: "LogosController" })
+							.state("Api.Logo", { url: '/Logos/:id?', templateUrl: 'webapi/Angular//Views/Logo.html', controller: "LogoController" })
+							.state("Api.Clubs", { url: '/Clubs', templateUrl: 'webapi/Angular//Views/Clubs.html', controller: "ClubsController" })
+							.state("Api.Club", { url: '/Clubs/:id?', templateUrl: 'webapi/Angular//Views/Club.html', controller: "ClubController" });
 					}]);
 		})();
 	</script>

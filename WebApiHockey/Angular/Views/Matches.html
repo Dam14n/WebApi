@@ -5,18 +5,34 @@
 			<div class="row header green">
 				<div class="cell">Id</div>
 				<div class="cell">Date</div>
-				<div class="cell">LocalTeam</div>
+				<div class="cell">LocalTeamId</div>
+				<div class="cell">LocalTeamName</div>               
+				<div class="cell">LocalTeamLogo</div>
 				<div class="cell">LocalGoals</div>
-				<div class="cell">EnemyTeam</div>
+                <div class="cell">LocalGoalsId</div>
+				<div class="cell">EnemyTeamId</div>
+				<div class="cell">EnemyTeamName</div>
+				<div class="cell">EnemyTeamLogo</div>
 				<div class="cell">EnemyGoals</div>
+                <div class="cell">EnemyGoalsId</div>
+				<div class="cell">DateMatch</div>                
+				<div class="cell">Played</div>
 			</div>
 			<div class="row" ng-repeat="match in listMatches">
 				<div class="cell">{{match.Id}}</div>
 				<div class="cell">{{match.DateId}}</div>
 				<div class="cell">{{match.LocalTeamId}}</div>
+				<div class="cell">{{match.LocalTeamName}}</div>
+				<div class="cell">{{match.LocalTeamLogo}}</div>
+				<div class="cell">{{match.LocalGoals}}</div>
 				<div class="cell">{{match.LocalGoalsIds}}</div>
 				<div class="cell">{{match.EnemyTeamId}}</div>
+				<div class="cell">{{match.EnemyTeamName}}</div>
+				<div class="cell">{{match.EnemyTeamLogo}}</div>
+				<div class="cell">{{match.EnemyGoals}}</div>
 				<div class="cell">{{match.EnemyGoalsIds}}</div>
+				<div class="cell">{{match.DateMatch}}</div>
+				<div class="cell">{{match.Played}}</div>
 				<div class="cell">
 					<a class="btn btn-xsm btn-primary edit" ui-sref="^.Match({id: {{match.Id}}})"><span class="glyphicon glyphicon-edit"></span>EDITAR</a>
 					<a class="btn btn-xsm btn-danger delete" ng-click="deleteMatch(match)" ui-sref="^.Matches"><span class="glyphicon glyphicon-remove-sign"></span>ELIMINAR</a>

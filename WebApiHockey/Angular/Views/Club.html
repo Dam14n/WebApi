@@ -8,13 +8,13 @@
 					<input type="text" class="form-control" placeholder="Name" title="Name" data-ng-model="club.Name" data-ng-required="true" />
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Name" title="Name" data-ng-model="club.Longitude" data-ng-required="true" />
+					<input type="text" class="form-control" placeholder="Longitude" title="Longitude" data-ng-model="club.Longitude" />
 				</div>
 				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Name" title="Name" data-ng-model="club.Latitude" data-ng-required="true" />
+					<input type="text" class="form-control" placeholder="Latitude" title="Latitude" data-ng-model="club.Latitude" />
 				</div>
 				<div class="form-group">
-					<select class="form-control" ng-click="showLogo(club)" data-ng-model="club.LogoId" data-ng-options="logo.Id as logo.Name for logo in logos" data-ng-required="true">
+					<select class="form-control" ng-click="showLogo(club)" data-ng-model="club.LogoId" data-ng-options="logo.Id as logo.Name for logo in logos">
 					</select>
 				</div>
 				<div>

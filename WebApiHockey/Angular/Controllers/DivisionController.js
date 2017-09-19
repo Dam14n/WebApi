@@ -15,7 +15,7 @@
 			}
 
 			var getDivision = function getDivision(id) {
-				$http.get('/api/divisions/' + id).then(function (response) {
+				$http.get('webapi/api/divisions/' + id).then(function (response) {
 					$scope.division = response.data;
 				});
 			}
@@ -28,11 +28,11 @@
 				if ($scope.form.$valid) {
 					$scope.ready = false;
 					if ($stateParams.id != "") {
-						$http.put('/api/divisions/' + entityMode, JSON.stringify($scope.division)).then(function (response) {
+						$http.put('webapi/api/divisions/' + entityMode, JSON.stringify($scope.division)).then(function (response) {
 							$state.reload();
 						});
 					} else {
-						$http.post('/api/divisions/' + entityMode, JSON.stringify($scope.division)).then(function (response) {
+						$http.post('webapi/api/divisions/' + entityMode, JSON.stringify($scope.division)).then(function (response) {
 							$state.reload();
 						});
 					}

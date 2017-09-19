@@ -18,28 +18,28 @@
 
 			function initialize(matchId) {
 				var promises = matchId ? getMatch(matchId) : [];
-				$http.get('/api/dates').then(function (response) {
+				$http.get('webapi/api/dates').then(function (response) {
 					$scope.dates = response.data;
 				});
-				$http.get('/api/teams').then(function (response) {
+				$http.get('webapi/api/teams').then(function (response) {
 					$scope.teams = response.data;
 				});
 				$scope.ready = true;
 			}
 
 			var getMatch = function getMatch(id) {
-				$http.get('/api/matches/' + id).then(function (response) {
+				$http.get('webapi/api/matches/' + id).then(function (response) {
 					$scope.match = response.data;
-					$http.get('/api/teams/' + $scope.match.LocalTeamId + '/players').then(function (response) {
+					$http.get('webapi/api/teams/' + $scope.match.LocalTeamId + '/players').then(function (response) {
 						$scope.localPlayers = response.data;
 					});
-					$http.get('/api/teams/' + $scope.match.EnemyTeamId + '/players').then(function (response) {
+					$http.get('webapi/api/teams/' + $scope.match.EnemyTeamId + '/players').then(function (response) {
 						$scope.enemyPlayers = response.data;
 					});
-					$http.get('/api/matches/' + $scope.match.Id + '/teams/' + $scope.match.LocalTeamId + '/goals').then(function (response) {
+					$http.get('webapi/api/matches/' + $scope.match.Id + '/teams/' + $scope.match.LocalTeamId + '/goals').then(function (response) {
 						$scope.localGoals = response.data;
 					});
-					$http.get('/api/matches/' + $scope.match.Id + '/teams/' + $scope.match.EnemyTeamId + '/goals').then(function (response) {
+					$http.get('webapi/api/matches/' + $scope.match.Id + '/teams/' + $scope.match.EnemyTeamId + '/goals').then(function (response) {
 						$scope.enemyGoals = response.data;
 					});
 				});
@@ -53,13 +53,13 @@
 				if ($scope.form.$valid) {
 					$scope.ready = false;
 					if ($stateParams.id != "") {
-						$http.put('/api/matches/' + entityMode, JSON.stringify($scope.match)).then(function (response) {
+						$http.put('webapi/api/matches/' + entityMode, JSON.stringify($scope.match)).then(function (response) {
 							submitGoals($scope.localGoals);
 							submitGoals($scope.enemyGoals);
 							deleteGoals();
 						});
 					} else {
-						$http.post('/api/matches/' + entityMode, JSON.stringify($scope.match)).then(function (response) {
+						$http.post('webapi/api/matches/' + entityMode, JSON.stringify($scope.match)).then(function (response) {
 							submitGoals($scope.localGoals);
 							submitGoals($scope.enemyGoals);
 							deleteGoals();
@@ -72,10 +72,10 @@
 			var submitGoals = function (goals) {
 				angular.forEach(goals, function (goal) {
 					if (goal.Id == null) {
-						$http.post('/api/goals/create', JSON.stringify(goal)).then(function (response) {
+						$http.post('webapi/api/goals/create', JSON.stringify(goal)).then(function (response) {
 						});
 					} else {
-						$http.put('/api/goals/put', JSON.stringify(goal)).then(function (response) {
+						$http.put('webapi/api/goals/put', JSON.stringify(goal)).then(function (response) {
 						});
 					}
 				});
@@ -85,7 +85,7 @@
 			var deleteGoals = function () {
 				angular.forEach(goalsToDelete, function (goal) {
 					if (goal.Id != null) {
-						$http.delete('/api/goals/delete/' + goal.Id).then(function (response) {
+						$http.delete('webapi/api/goals/delete/' + goal.Id).then(function (response) {
 						});
 					}
 				});
@@ -94,7 +94,7 @@
 
 			$scope.updateLocalPlayers = function (teamId) {
 				if (teamId) {
-					$http.get('/api/teams/' + teamId + '/players').then(function (response) {
+					$http.get('webapi/api/teams/' + teamId + '/players').then(function (response) {
 						$scope.localPlayers = response.data;
 					});
 				}
@@ -102,7 +102,7 @@
 
 			$scope.updateEnemyPlayers = function (teamId) {
 				if (teamId) {
-					$http.get('/api/teams/' + teamId + '/players').then(function (response) {
+					$http.get('webapi/api/teams/' + teamId + '/players').then(function (response) {
 						$scope.enemyPlayers = response.data;
 					});
 				}

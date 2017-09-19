@@ -12,14 +12,14 @@
 
 			function initialize(dateId) {
 				var promises = dateId ? getDate(dateId) : [];
-				$http.get('/api/categories').then(function (response) {
+				$http.get('webapi/api/categories').then(function (response) {
 					$scope.categories = response.data;
 				});
 				$scope.ready = true;
 			}
 
 			var getDate = function getDate(id) {
-				$http.get('/api/dates/' + id).then(function (response) {
+				$http.get('webapi/api/dates/' + id).then(function (response) {
 					$scope.date = response.data;
 				});
 			}
@@ -32,11 +32,11 @@
 				if ($scope.form.$valid) {
 					$scope.ready = false;
 					if ($stateParams.id != "") {
-						$http.put('/api/dates/' + entityMode, JSON.stringify($scope.date)).then(function (response) {
+						$http.put('webapi/api/dates/' + entityMode, JSON.stringify($scope.date)).then(function (response) {
 							$state.reload();
 						});
 					} else {
-						$http.post('/api/dates/' + entityMode, JSON.stringify($scope.date)).then(function (response) {
+						$http.post('webapi/api/dates/' + entityMode, JSON.stringify($scope.date)).then(function (response) {
 							$state.reload();
 						});
 					}

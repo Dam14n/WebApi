@@ -12,7 +12,7 @@
 
 			function initialize(playerId) {
 				var promises = playerId ? getPlayer(playerId) : [];
-				$http.get('/api/teams').then(function (response) {
+				$http.get('webapi/api/teams').then(function (response) {
 					$scope.teams = response.data;
 					$scope.teams.push({Name: "SIN EQUIPO"});
 				});
@@ -20,7 +20,7 @@
 			};
 
 			var getPlayer = function getPlayer(id) {
-				$http.get('/api/players/' + id).then(function (response) {
+				$http.get('webapi/api/players/' + id).then(function (response) {
 					$scope.player = response.data;
 				});
 			}
@@ -33,11 +33,11 @@
 				if ($scope.form.$valid) {
 					$scope.ready = false;
 					if ($stateParams.id != "") {
-						$http.put('/api/players/' + entityMode, JSON.stringify($scope.player)).then(function (response) {
+						$http.put('webapi/api/players/' + entityMode, JSON.stringify($scope.player)).then(function (response) {
 							$state.reload();
 						});
 					} else {
-						$http.post('/api/players/' + entityMode, JSON.stringify($scope.player)).then(function (response) {
+						$http.post('webapi/api/players/' + entityMode, JSON.stringify($scope.player)).then(function (response) {
 							$state.reload();
 						});
 					}
